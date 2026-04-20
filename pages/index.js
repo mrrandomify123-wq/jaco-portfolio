@@ -86,25 +86,30 @@ export default function Home() {
         <div className="section-header">
           <p className="section-label">Architecture</p>
         </div>
-        <div className="arch-project-list">
+        <div className="arch-cards-grid">
           {architectureProjects.map((project, i) => (
             <Link
               key={project.id}
               href={project.href}
-              className="arch-project-row fade-in"
-              style={{ transitionDelay: `${i * 70}ms` }}
+              className="arch-card fade-in"
+              style={{ transitionDelay: `${i * 80}ms` }}
             >
-              <div className="arch-row-left">
-                <p className="arch-row-title">{project.title}</p>
-                <div className="project-tags">
+              <div className="arch-card-image-wrap">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="arch-card-image"
+                  loading="lazy"
+                />
+              </div>
+              <div className="arch-card-body">
+                <p className="arch-card-date">{project.date}</p>
+                <p className="arch-card-title">{project.title}</p>
+                <div className="arch-card-tags">
                   {project.tags.map((tag) => (
                     <span key={tag} className="tag">{tag}</span>
                   ))}
                 </div>
-              </div>
-              <div className="arch-row-right">
-                <span className="arch-row-date">{project.date}</span>
-                <span className="arch-row-arrow">↗</span>
               </div>
             </Link>
           ))}

@@ -60,7 +60,7 @@ export default function ProjectPage() {
           </div>
         </div>
 
-        {/* Hero image */}
+        {/* Hero image — full width, sits right below title */}
         {project.heroImage && (
           <img
             src={project.heroImage}
@@ -69,7 +69,7 @@ export default function ProjectPage() {
           />
         )}
 
-        {/* Overview row */}
+        {/* Metadata row */}
         <div className="project-overview fade-in">
           <div className="project-overview-item">
             <p className="project-overview-label">Role</p>
@@ -89,7 +89,7 @@ export default function ProjectPage() {
           </div>
         </div>
 
-        {/* Overview text */}
+        {/* Overview */}
         <div className="project-section fade-in">
           <p className="project-section-label">Overview</p>
           <div className="project-section-body">
@@ -106,24 +106,24 @@ export default function ProjectPage() {
             ))}
           </div>
           {project.problem.insight && (
-            <div className="project-insight">
+            <div className="project-insight fade-in">
               <p>{project.problem.insight}</p>
             </div>
           )}
         </div>
 
-        {/* Process */}
+        {/* Process — full-width images, one per step */}
         {project.process && project.process.length > 0 && (
           <div className="project-section fade-in">
             <p className="project-section-label">Process</p>
             {project.processNote && (
-              <p className="project-section-body" style={{ marginBottom: '24px' }}>
-                {project.processNote}
-              </p>
+              <div className="project-section-body" style={{ marginBottom: '36px' }}>
+                <p>{project.processNote}</p>
+              </div>
             )}
-            <div className="project-process-grid">
+            <div className="project-process-steps">
               {project.process.map((step) => (
-                <div key={step.num} className="process-step">
+                <div key={step.num} className="process-step fade-in">
                   {step.image && (
                     <img
                       src={step.image}
@@ -132,7 +132,7 @@ export default function ProjectPage() {
                       loading="lazy"
                     />
                   )}
-                  <div>
+                  <div className="process-step-body">
                     <p className="process-step-num">{step.num}</p>
                     <p className="process-step-title">{step.title}</p>
                     <p className="process-step-desc">{step.description}</p>
@@ -143,23 +143,20 @@ export default function ProjectPage() {
           </div>
         )}
 
-        {/* Design gallery */}
+        {/* Design images — full-width single column */}
         {project.designImages && project.designImages.length > 0 && (
           <div className="project-section fade-in">
             <p className="project-section-label">Designs</p>
-            <div className="project-image-grid">
+            <div className="project-design-images">
               {project.designImages.map((img, i) => (
-                <div key={i}>
+                <div key={i} className="project-design-image-block fade-in">
                   <img
                     src={img.src}
-                    alt={img.caption}
-                    style={{ width: '100%', aspectRatio: '4/3', objectFit: 'cover', borderRadius: 'var(--radius)', background: 'var(--surface)' }}
+                    alt={img.caption || project.title}
                     loading="lazy"
                   />
                   {img.caption && (
-                    <p style={{ fontSize: '11px', color: 'var(--text-muted)', marginTop: '8px', fontFamily: 'var(--mono)', lineHeight: 1.5 }}>
-                      {img.caption}
-                    </p>
+                    <p className="project-image-caption">{img.caption}</p>
                   )}
                 </div>
               ))}
@@ -169,12 +166,14 @@ export default function ProjectPage() {
 
         {/* Final full-width image */}
         {project.finalImage && (
-          <img
-            src={project.finalImage}
-            alt="Final design"
-            className="project-image-full fade-in"
-            loading="lazy"
-          />
+          <div className="fade-in" style={{ marginBottom: '8px' }}>
+            <img
+              src={project.finalImage}
+              alt="Final design"
+              className="project-image-full"
+              loading="lazy"
+            />
+          </div>
         )}
 
         {/* Outcome */}
@@ -187,7 +186,7 @@ export default function ProjectPage() {
 
         {/* Reflection */}
         {project.reflection && (
-          <div className="project-section fade-in">
+          <div className="project-section fade-in" style={{ marginBottom: '0' }}>
             <p className="project-section-label">Reflection</p>
             <div className="project-section-body">
               <p>{project.reflection}</p>
