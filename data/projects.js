@@ -198,6 +198,23 @@ export const caseStudies = {
         imageAlt: 'Starlight design system and interactions',
       },
     ],
+    testimonials: [
+      {
+        quote: "I really liked your donation process and how streamlined it was. I also appreciated your language, especially the 'I want to give' statement. I thought it was a powerful yet simple statement to have on a donation form.",
+        author: 'Vanessa Rodrigues',
+        role: 'Digital Marketing Lead, Starlight Children\'s Foundation',
+      },
+      {
+        quote: "I loved the rocket ship on the thank you page — it's something that has actually been floated a couple of times. I was very impressed to see it. It's very Starlighty and it really makes an impact on the thank you page.",
+        author: 'Maddison Guthridge',
+        role: "Direct Marketing Executive, Starlight Children's Foundation",
+      },
+      {
+        quote: "I love the customer journey summary as well. The payment summary really packs a punch and is very engaging. I also love how you've made a clear call to action to make this donation monthly.",
+        author: 'Onur Ekinci',
+        role: 'Mentor & CEO of CalcTree',
+      },
+    ],
     projectLinks: [
       {
         label: 'View Prototype',
@@ -320,6 +337,18 @@ export const caseStudies = {
         },
       ],
     },
+    testimonials: [
+      {
+        quote: "I really liked the booking management system. I liked the way that you had it all separated into the relevant sections, and it was all just there. I thought that was really clever and made it easy to see the different sections and tasks.",
+        author: 'Danya Sterling',
+        role: 'Manager, Education Enterprises and Program Development, The Big Issue',
+      },
+      {
+        quote: "I think less is more when it comes to file organisation and I think you really did a good job with it, especially with the colours as well.",
+        author: 'Candy Russo',
+        role: 'Mentor & Senior UX/UI Designer',
+      },
+    ],
     projectLinks: [
       {
         label: 'Teacher Prototype',
@@ -369,26 +398,26 @@ export const caseStudies = {
       {
         num: '01',
         title: 'Stakeholder Interviews',
-        description: "Conducted in-depth interviews to uncover five key business areas: target demographic priorities, technological capabilities, merger goals, ESG values, and product offerings. The bank was looking to streamline 200+ products and needed insight into which mattered most to younger users.",
-        image: '/images/peoples-first/existing.png',
+        description: "Conducted in-depth interviews with Heritage Bank and People's Choice stakeholders to uncover five key business areas: target demographic priorities, technological capabilities, merger goals, ESG values, and product offerings. The bank was looking to streamline 200+ products and needed insight into which mattered most to younger users.",
+        image: null,
       },
       {
         num: '02',
-        title: 'Research Design',
-        description: "Designed a three-method research plan combining stakeholder interviews, 1-on-1 long-form user interviews, and surveys. Business objectives focused on increasing target demographic acquisition, creating a unified brand image, and identifying key digital-first features.",
-        image: '/images/peoples-first/heritage.png',
+        title: 'Competitive Platform Review',
+        description: "Reviewed both legacy digital banking platforms side by side, benchmarking against industry standards and cataloguing UX patterns, information architecture, and feature parity. This formed the baseline for understanding the gap between current state and target state.",
+        image: '/images/peoples-first/existing.png',
       },
       {
         num: '03',
         title: 'User Interviews and Surveys',
-        description: 'Recruited Millennial and Gen Z participants for in-depth interviews and surveys. Research objectives covered understanding of mutual banks, key products and offerings, and the role of ESG values and reputation in financial decision-making.',
-        image: '/images/peoples-first/peoples.png',
+        description: 'Recruited Millennial and Gen Z participants for 1-on-1 long-form interviews and surveys. Research objectives covered understanding of mutual banks, key products and offerings, and the role of ESG values and reputation in financial decision-making.',
+        image: '/images/peoples-first/research.jpg',
       },
       {
         num: '04',
         title: 'Synthesis and Proto-Persona',
-        description: 'Synthesised interview and survey data into a proto-persona illustrating the target demographic goals, needs, pain points, and motivations. This grounded our recommendations in real user data rather than assumptions.',
-        image: '/images/peoples-first/research.jpg',
+        description: 'Synthesised interview and survey data into a proto-persona illustrating the target demographic goals, needs, pain points, and motivations. This grounded our five key insights and three recommendations in real user data rather than assumptions.',
+        image: '/images/peoples-first/peoples.png',
       },
     ],
     processNote: 'This was a research-heavy engagement with no hi-fi design output. The deliverable was evidence and insight that the product team could act on. That required a different kind of rigour: communicating findings clearly is itself a design problem.',
