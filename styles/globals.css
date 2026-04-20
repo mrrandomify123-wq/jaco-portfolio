@@ -1135,7 +1135,411 @@ img {
   margin-bottom: 0;
 }
 
-/* Process steps — full-width single column, image above text */
+/* ===== PROJECT LINKS BAR ===== */
+.project-links-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 32px;
+}
+
+.project-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text);
+  font-family: var(--mono);
+  letter-spacing: 0.06em;
+  padding: 10px 18px;
+  border: 1px solid var(--border-hover);
+  border-radius: var(--radius-sm);
+  transition: border-color 0.2s, background 0.2s;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.project-link-btn:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.project-link-btn svg {
+  flex-shrink: 0;
+  opacity: 0.6;
+}
+
+/* ===== KEY FEATURES — alternating 2-col layout ===== */
+.project-features {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 0;
+}
+
+.feature-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+  align-items: center;
+  padding: 72px 0;
+  border-top: 1px solid var(--border);
+}
+
+.feature-item:last-child {
+  border-bottom: 1px solid var(--border);
+}
+
+/* Even items: swap image to left */
+.feature-item:nth-child(even) .feature-text {
+  order: 2;
+}
+
+.feature-item:nth-child(even) .feature-image-wrap {
+  order: 1;
+}
+
+.feature-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.feature-num {
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--text-muted);
+  font-family: var(--mono);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.feature-title {
+  font-size: clamp(20px, 2vw, 26px);
+  font-weight: 400;
+  color: var(--text);
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  margin-bottom: 16px;
+}
+
+.feature-body {
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: 24px;
+}
+
+.feature-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--text);
+  font-family: var(--mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 9px 16px;
+  border: 1px solid var(--border-hover);
+  border-radius: var(--radius-sm);
+  transition: border-color 0.2s, background 0.2s;
+  text-decoration: none;
+  width: fit-content;
+}
+
+.feature-link-btn:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.feature-image-wrap {
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--surface);
+  position: relative;
+}
+
+.feature-image-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Clickable prototype images get a hover overlay */
+a.feature-image-wrap::after {
+  content: 'View Prototype ↗';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-family: var(--mono);
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+
+a.feature-image-wrap:hover::after {
+  opacity: 1;
+}
+
+/* ===== UI PRINCIPLES (3-col) ===== */
+.ui-principles {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.ui-principles-header {
+  margin-bottom: 48px;
+}
+
+.ui-principles-label {
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-family: var(--mono);
+  margin-bottom: 16px;
+}
+
+.ui-principles-heading {
+  font-size: clamp(20px, 2.2vw, 28px);
+  font-weight: 400;
+  color: var(--text);
+  letter-spacing: -0.025em;
+  line-height: 1.25;
+  margin-bottom: 12px;
+  max-width: 700px;
+}
+
+.ui-principles-subtext {
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.7;
+  max-width: 600px;
+}
+
+.ui-principles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.ui-principle-item {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.ui-principle-image {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.ui-principle-title {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text);
+  letter-spacing: -0.015em;
+}
+
+.ui-principle-body {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.75;
+}
+
+/* ===== INSIGHT CARDS (People First Bank) ===== */
+.project-insights-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.project-insight-card {
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  gap: 20px;
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  align-items: start;
+}
+
+.project-insight-card-num {
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--accent);
+  font-family: var(--mono);
+  letter-spacing: 0.1em;
+  padding-top: 3px;
+}
+
+.project-insight-card-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: -0.01em;
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+
+.project-insight-card-body {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* ===== RECOMMENDATIONS ===== */
+.project-recommendations {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 32px;
+}
+
+.project-recommendation {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 24px;
+  padding: 28px 0;
+  border-top: 1px solid var(--border);
+  align-items: start;
+}
+
+.project-recommendation:last-child {
+  border-bottom: 1px solid var(--border);
+}
+
+.project-recommendation-num {
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--accent);
+  font-family: var(--mono);
+  letter-spacing: 0.1em;
+  padding-top: 4px;
+}
+
+.project-recommendation-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: -0.01em;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.project-recommendation-body {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.75;
+}
+
+/* ===== APPS / SIDE PROJECTS SECTION ===== */
+.apps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.app-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 24px 24px;
+  background: var(--surface);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  position: relative;
+  transition: border-color 0.2s;
+}
+
+.app-card:hover {
+  border-color: var(--border-hover);
+}
+
+.app-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.app-card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: rgba(232, 68, 10, 0.1);
+  border: 1px solid rgba(232, 68, 10, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.app-card-icon svg {
+  color: var(--accent);
+}
+
+.app-coming-soon {
+  font-size: 8px;
+  font-weight: 700;
+  color: var(--accent);
+  font-family: var(--mono);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: 1px solid rgba(232, 68, 10, 0.35);
+  padding: 3px 8px;
+  border-radius: 100px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.app-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+}
+
+.app-tagline {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.app-description {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.7;
+  opacity: 0.8;
+}
+
+.app-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+/* ===== Process steps — full-width single column, image above text */
 .project-process-steps {
   display: flex;
   flex-direction: column;
@@ -1307,6 +1711,28 @@ img {
   transform: translateX(4px);
 }
 
+/* Key features wrapper — sits outside project-detail for full content width */
+.project-features-section {
+  border-top: 1px solid var(--border);
+  margin-top: 64px;
+}
+
+.project-features-inner {
+  max-width: 960px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 56px 48px 0;
+}
+
+.project-features-label-row {
+  margin-bottom: 0;
+}
+
+.project-features .feature-item:first-child {
+  border-top: none;
+  padding-top: 48px;
+}
+
 /* ===== 404 ===== */
 .not-found {
   display: flex;
@@ -1403,6 +1829,29 @@ img {
   }
 
   .project-image-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-item {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 48px 0;
+  }
+
+  .feature-item:nth-child(even) .feature-text,
+  .feature-item:nth-child(even) .feature-image-wrap {
+    order: unset;
+  }
+
+  .ui-principles-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .apps-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .arch-cards-grid {
     grid-template-columns: 1fr;
   }
 

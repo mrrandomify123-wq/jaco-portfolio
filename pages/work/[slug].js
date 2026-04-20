@@ -5,6 +5,35 @@ import { caseStudies, siteConfig } from '../../data/projects';
 import { CtaBanner, Footer } from '../../components/CtaBanner';
 import { useScrollFade } from '../../hooks/useScrollFade';
 
+// Icon: Figma logo
+function FigmaIcon() {
+  return (
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M8 24c2.2 0 4-1.8 4-4v-4H8c-2.2 0-4 1.8-4 4s1.8 4 4 4z" />
+      <path d="M4 12c0-2.2 1.8-4 4-4h4v8H8c-2.2 0-4-1.8-4-4z" />
+      <path d="M4 4c0-2.2 1.8-4 4-4h4v8H8C5.8 8 4 6.2 4 4z" />
+      <path d="M12 0h4c2.2 0 4 1.8 4 4s-1.8 4-4 4h-4V0z" />
+      <path d="M20 12c0 2.2-1.8 4-4 4s-4-1.8-4-4 1.8-4 4-4 4 1.8 4 4z" />
+    </svg>
+  );
+}
+
+// Icon: document / Google Drive
+function DocIcon() {
+  return (
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+      <polyline points="14 2 14 8 20 8" />
+      <line x1="16" y1="13" x2="8" y2="13" />
+      <line x1="16" y1="17" x2="8" y2="17" />
+    </svg>
+  );
+}
+
+function LinkIcon({ icon }) {
+  return icon === 'figma' ? <FigmaIcon /> : <DocIcon />;
+}
+
 export default function ProjectPage() {
   const router = useRouter();
   const { slug } = router.query;
@@ -40,7 +69,7 @@ export default function ProjectPage() {
 
       <div className="project-detail">
 
-        {/* Back link */}
+        {/* Back */}
         <Link href={backHref} className="project-back">
           <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
             <line x1="19" y1="12" x2="5" y2="12" />
@@ -60,7 +89,7 @@ export default function ProjectPage() {
           </div>
         </div>
 
-        {/* Hero image — full width, sits right below title */}
+        {/* Hero image */}
         {project.heroImage && (
           <img
             src={project.heroImage}
@@ -89,6 +118,25 @@ export default function ProjectPage() {
           </div>
         </div>
 
+        {/* Project resource links */}
+        {project.projectLinks && project.projectLinks.length > 0 && (
+          <div className="project-links-bar fade-in">
+            {project.projectLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="project-link-btn"
+              >
+                <LinkIcon icon={link.icon} />
+                {link.label}
+                <span style={{ opacity: 0.5, marginLeft: 2 }}>↗</span>
+              </a>
+            ))}
+          </div>
+        )}
+
         {/* Overview */}
         <div className="project-section fade-in">
           <p className="project-section-label">Overview</p>
@@ -97,7 +145,7 @@ export default function ProjectPage() {
           </div>
         </div>
 
-        {/* Problem */}
+        {/* Problem / Challenge */}
         <div className="project-section fade-in">
           <p className="project-section-label">{project.problem.title}</p>
           <div className="project-section-body">
@@ -112,7 +160,7 @@ export default function ProjectPage() {
           )}
         </div>
 
-        {/* Process — full-width images, one per step */}
+        {/* Process steps */}
         {project.process && project.process.length > 0 && (
           <div className="project-section fade-in">
             <p className="project-section-label">Process</p>
@@ -143,7 +191,7 @@ export default function ProjectPage() {
           </div>
         )}
 
-        {/* Design images — full-width single column */}
+        {/* Design images (supporting visuals, full-width stacked) */}
         {project.designImages && project.designImages.length > 0 && (
           <div className="project-section fade-in">
             <p className="project-section-label">Designs</p>
@@ -164,9 +212,45 @@ export default function ProjectPage() {
           </div>
         )}
 
+        {/* Key insights (People First Bank etc.) */}
+        {project.insights && project.insights.length > 0 && (
+          <div className="project-section fade-in">
+            <p className="project-section-label">Key Insights</p>
+            <div className="project-insights-grid">
+              {project.insights.map((insight) => (
+                <div key={insight.num} className="project-insight-card fade-in">
+                  <p className="project-insight-card-num">{insight.num}</p>
+                  <div>
+                    <p className="project-insight-card-title">{insight.title}</p>
+                    <p className="project-insight-card-body">{insight.body}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Recommendations */}
+        {project.recommendations && project.recommendations.length > 0 && (
+          <div className="project-section fade-in">
+            <p className="project-section-label">Recommendations</p>
+            <div className="project-recommendations">
+              {project.recommendations.map((rec) => (
+                <div key={rec.num} className="project-recommendation fade-in">
+                  <p className="project-recommendation-num">{rec.num}</p>
+                  <div>
+                    <p className="project-recommendation-title">{rec.title}</p>
+                    <p className="project-recommendation-body">{rec.body}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
         {/* Final full-width image */}
         {project.finalImage && (
-          <div className="fade-in" style={{ marginBottom: '8px' }}>
+          <div className="fade-in">
             <img
               src={project.finalImage}
               alt="Final design"
@@ -195,6 +279,106 @@ export default function ProjectPage() {
         )}
 
       </div>
+
+      {/* Key Features — alternating layout, outside the max-width container so it can breathe */}
+      {project.features && project.features.length > 0 && (
+        <div className="project-features-section fade-in">
+          <div className="project-features-inner">
+            <div className="project-features-label-row">
+              <p className="project-section-label" style={{ color: 'var(--accent)', fontFamily: 'var(--mono)', fontSize: '9px', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase' }}>
+                Key Features
+              </p>
+            </div>
+            <div className="project-features">
+              {project.features.map((feature) => {
+                const imageEl = (
+                  <div className="feature-image-wrap">
+                    <img
+                      src={feature.image}
+                      alt={feature.imageAlt || feature.title}
+                      loading="lazy"
+                    />
+                  </div>
+                );
+
+                return (
+                  <div key={feature.num} className="feature-item fade-in">
+                    <div className="feature-text">
+                      <p className="feature-num">{feature.num}</p>
+                      <h3 className="feature-title">{feature.title}</h3>
+                      <p className="feature-body">{feature.body}</p>
+                      {feature.link && (
+                        <a
+                          href={feature.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="feature-link-btn"
+                        >
+                          <FigmaIcon />
+                          {feature.linkLabel || 'View Prototype'} ↗
+                        </a>
+                      )}
+                    </div>
+                    {feature.link ? (
+                      <a
+                        href={feature.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="feature-image-wrap"
+                      >
+                        <img
+                          src={feature.image}
+                          alt={feature.imageAlt || feature.title}
+                          loading="lazy"
+                        />
+                      </a>
+                    ) : (
+                      <div className="feature-image-wrap">
+                        <img
+                          src={feature.image}
+                          alt={feature.imageAlt || feature.title}
+                          loading="lazy"
+                        />
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* UI Principles (3-col, Big Issue) */}
+      {project.uiPrinciples && (
+        <div className="project-section-wide fade-in">
+          <div className="project-detail" style={{ maxWidth: '860px', margin: '0 auto', padding: '0 48px' }}>
+            <div className="project-section" style={{ marginTop: 0, borderTop: 'none', paddingTop: 0 }}>
+              <div className="ui-principles">
+                <div className="ui-principles-header">
+                  <p className="ui-principles-label">{project.uiPrinciples.label}</p>
+                  <h2 className="ui-principles-heading">{project.uiPrinciples.heading}</h2>
+                  <p className="ui-principles-subtext">{project.uiPrinciples.subtext}</p>
+                </div>
+                <div className="ui-principles-grid">
+                  {project.uiPrinciples.items.map((item) => (
+                    <div key={item.title} className="ui-principle-item">
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className="ui-principle-image"
+                        loading="lazy"
+                      />
+                      <p className="ui-principle-title">{item.title}</p>
+                      <p className="ui-principle-body">{item.body}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Next project */}
       {project.next && (

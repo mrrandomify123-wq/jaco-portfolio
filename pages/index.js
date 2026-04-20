@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { useEffect } from 'react';
 import ProjectCard from '../components/ProjectCard';
 import { CtaBanner, Footer } from '../components/CtaBanner';
-import { uxProjects, architectureProjects, siteConfig } from '../data/projects';
+import { uxProjects, architectureProjects, sideProjects, siteConfig } from '../data/projects';
 import { useScrollFade } from '../hooks/useScrollFade';
 
 export default function Home() {
@@ -12,7 +12,7 @@ export default function Home() {
   // Track which section is in view and update the URL hash
   // so the sidebar nav can highlight the correct link
   useEffect(() => {
-    const sectionIds = ['work', 'architecture', 'about'];
+    const sectionIds = ['work', 'apps', 'architecture', 'about'];
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -77,6 +77,59 @@ export default function Home() {
         <div className="projects-list">
           {uxProjects.map((project, i) => (
             <ProjectCard key={project.id} project={project} delay={i * 120} />
+          ))}
+        </div>
+      </section>
+
+      {/* SIDE PROJECTS / APPS */}
+      <section id="apps" className="section">
+        <div className="section-header">
+          <p className="section-label">Apps</p>
+        </div>
+        <div className="apps-grid">
+          {sideProjects.map((app, i) => (
+            <div
+              key={app.id}
+              className="app-card fade-in"
+              style={{ transitionDelay: `${i * 100}ms` }}
+            >
+              <div className="app-card-header">
+                <div className="app-card-icon">
+                  {app.id === 'peckish' && (
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+                      <path d="M18 8h1a4 4 0 0 1 0 8h-1" />
+                      <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z" />
+                      <line x1="6" y1="1" x2="6" y2="4" />
+                      <line x1="10" y1="1" x2="10" y2="4" />
+                      <line x1="14" y1="1" x2="14" y2="4" />
+                    </svg>
+                  )}
+                  {app.id === 'arch-buddy' && (
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+                      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                      <polyline points="9 22 9 12 15 12 15 22" />
+                    </svg>
+                  )}
+                  {app.id === 'flashstacks' && (
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+                      <rect x="2" y="5" width="20" height="14" rx="2" />
+                      <line x1="2" y1="10" x2="22" y2="10" />
+                    </svg>
+                  )}
+                </div>
+                <span className="app-coming-soon">{app.status}</span>
+              </div>
+              <div>
+                <p className="app-name">{app.name}</p>
+                <p className="app-tagline">{app.tagline}</p>
+              </div>
+              <p className="app-description">{app.description}</p>
+              <div className="app-tags">
+                {app.tags.map((tag) => (
+                  <span key={tag} className="tag">{tag}</span>
+                ))}
+              </div>
+            </div>
           ))}
         </div>
       </section>

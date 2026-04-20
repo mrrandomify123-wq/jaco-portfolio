@@ -85,6 +85,39 @@ export const architectureProjects = [
 ];
 
 // ============================================================
+// SIDE PROJECTS (apps in development)
+// ============================================================
+export const sideProjects = [
+  {
+    id: 'peckish',
+    name: 'Peckish',
+    tagline: 'Discover restaurants from your saved reels',
+    description:
+      'Peckish scrapes shared Instagram Reels and TikToks to automatically extract restaurant data, building your personal dining wishlist without any manual effort. Save, sort, and explore.',
+    tags: ['iOS', 'React Native', 'Food & Dining'],
+    status: 'Coming Soon',
+  },
+  {
+    id: 'arch-buddy',
+    name: 'Registration Buddy',
+    tagline: 'Your architectural registration companion',
+    description:
+      'Log your experience hours, prep for AACA competency interviews, and test your knowledge with built-in flashcard quizzes. Everything you need for architectural registration in one place.',
+    tags: ['iOS', 'Architecture', 'Career Tools'],
+    status: 'Coming Soon',
+  },
+  {
+    id: 'flashstacks',
+    name: 'FlashStacks',
+    tagline: 'Smarter flashcards for language and beyond',
+    description:
+      'Spaced repetition flashcards built for language learning and any subject that benefits from active recall. Beautiful, minimal, and surprisingly effective.',
+    tags: ['iOS', 'Learning', 'Language'],
+    status: 'Coming Soon',
+  },
+];
+
+// ============================================================
 // PROJECT CASE STUDIES (detail pages)
 // ============================================================
 export const caseStudies = {
@@ -95,7 +128,7 @@ export const caseStudies = {
     tags: ['UX Research', 'UI Design', 'Hi-Fi Prototyping'],
     heroImage: '/images/starlight/hero.png',
     overview:
-      "Redesigning the volunteer coordination experience for Starlight Children's Foundation, a charity that brings happiness to seriously ill children and their families across Australia.",
+      "Starlight Children's Foundation is an Australian charity that provides support to seriously ill children and their families through various programs and services. They aim to bring joy, comfort, and relief to children facing medical challenges by granting wishes, organising enrichment events, and providing resources to improve their quality of life. The project brief outlined a need for UX design recommendations to improve the conversion of website visitors to monthly and one-off donors.",
     role: 'UX Designer',
     timeline: '10 weeks',
     tools: 'Figma, Miro',
@@ -103,50 +136,85 @@ export const caseStudies = {
     problem: {
       title: 'The Problem',
       body: [
-        "Starlight's volunteer operations relied on scattered tools and manual processes. Coordinators juggled spreadsheets, emails, and phone calls to manage events, track hours, and onboard new volunteers, creating friction in an already emotionally demanding environment.",
-        "Through stakeholder interviews we learned coordinators were spending 3 to 4 hours each week on administrative tasks that a well-designed system could automate. Meanwhile, volunteers had no clear way to see their contributed hours or understand the real-world impact of their time.",
+        "Large numbers of potential donors fell off at various touchpoints of the online donation experience. Following stakeholder interviews with Starlight's National Digital Marketing Manager, Direct Marketing Executive, and Digital Marketing Lead, we uncovered that the existing donation process was cumbersome and put off many potential one-time donors.",
+        "Our analysis also showed that a substantial number of users accessed Starlight's website via mobile devices, yet the current mobile experience was suboptimal. Navigation was often confusing, load times were slow, and key information was difficult to find. These issues led to high dropout rates among mobile users.",
       ],
-      insight: "Volunteers don't just want to help. They want to feel connected to the impact of their help. The existing system made that invisible.",
+      insight: "Potential donors were more likely to contribute when they understood the specific impact of their donation. The current experience lacked compelling narratives that illustrated how different amounts could make a difference.",
     },
     process: [
       {
         num: '01',
-        title: 'Discovery',
-        description: 'Conducted stakeholder interviews with Starlight coordinators and ran a contextual review of existing tools to map pain points and uncover unmet needs.',
+        title: 'Discovery and Stakeholder Interviews',
+        description: 'Conducted stakeholder interviews with Starlight coordinators and ran a contextual review of the existing donation experience. Mapped pain points across the full donor journey.',
         image: '/images/starlight/research-1.jpg',
       },
       {
         num: '02',
-        title: 'Research',
-        description: 'Synthesised findings into a user persona and a consolidated journey map covering the full volunteer lifecycle, from sign-up through to event day and post-event reflection.',
+        title: 'User Research and Persona',
+        description: 'Synthesised interview findings into a user persona and consolidated journey map. Six key research insights emerged covering shared values, transparency, design credibility, impact clarity, navigation confidence, and data visualisation.',
         image: '/images/starlight/persona.jpg',
       },
       {
         num: '03',
-        title: 'Ideation',
-        description: 'Ran a SCAMPER ideation workshop with the team to generate solutions. Prioritised ideas using an impact vs effort matrix before moving into wireframes.',
+        title: 'Ideation with SCAMPER',
+        description: 'Used the SCAMPER method to systematically evaluate the current website experience and identify what worked and what needed to change. Developed initial sketches incorporating all research findings.',
         image: '/images/starlight/research-2.jpg',
       },
       {
         num: '04',
-        title: 'Prototype',
-        description: 'Designed high-fidelity screens in Figma with interactive states, covering the full coordinator dashboard, event booking flow, and volunteer impact tracker.',
-        image: '/images/starlight/prototype.png',
+        title: 'Wireframes and User Testing',
+        description: 'Developed wireframes for a minimalist homepage design that invited users to scroll and explore. Tested with 7 participants. Positive feedback: credible organisation, digestible information. Areas improved: donation descriptions, payment frequency options.',
+        image: '/images/starlight/wireframes.png',
       },
     ],
     processNote: 'We followed a Human Centered Design (HCD) methodology throughout, returning to users at each stage to validate assumptions before progressing.',
     designImages: [
-      { src: '/images/starlight/wireframes.png', caption: 'Wireframes: coordinator dashboard and key task flows' },
-      { src: '/images/starlight/journey-map.png', caption: 'Journey map: consolidated from 8 volunteer interviews' },
-      { src: '/images/starlight/final-1.png', caption: 'Hi-fi prototype: event management dashboard' },
-      { src: '/images/starlight/final-2.png', caption: 'Hi-fi prototype: volunteer onboarding flow' },
+      { src: '/images/starlight/journey-map.png', caption: 'Journey map: consolidated from stakeholder and user interviews' },
+      { src: '/images/starlight/prototype.png', caption: 'Hi-fi prototype: full interactive mobile experience' },
     ],
-    finalImage: '/images/starlight/final-3.png',
+    finalImage: null,
+    features: [
+      {
+        num: 'Key Feature 01',
+        title: 'Inviting users to scroll and learn more.',
+        body: "We designed the mobile website with visually appealing elements and interactive features that invited users to scroll and learn more about Starlight. By incorporating captivating imagery, compelling storytelling, and clear calls-to-action, we created a seamless narrative that guided users through Starlight's mission and impact.",
+        image: '/images/starlight/final-1.png',
+        imageAlt: 'Starlight mobile homepage design',
+        link: 'https://www.figma.com/proto/lEtsIdnSO4sZcHOynEYsGA/Starlight-Project-File?page-id=209%3A2386&type=design&node-id=209-2461&viewport=4305%2C270%2C0.35&t=1qsDuzJ5xSM03ff1-1&scaling=scale-down&starting-point-node-id=209%3A2461&mode=design',
+        linkLabel: 'View Prototype',
+      },
+      {
+        num: 'Key Feature 02',
+        title: 'A more user friendly donation experience.',
+        body: 'We streamlined the donation experience by minimising the number of steps required, providing clear instructions, and offering multiple payment options. By implementing intuitive form designs and ensuring that each element was easy to navigate, we reduced friction points that typically deter users from completing their donations. Progress indicators and confirmation messages kept users informed throughout the process.',
+        image: '/images/starlight/final-2.png',
+        imageAlt: 'Starlight donation flow redesign',
+      },
+      {
+        num: 'Key Feature 03',
+        title: 'Playful and engaging design.',
+        body: "We focused on creating a playful design system that maintained the Starlight aesthetic while clearly communicating system status through interactions. By integrating dynamic and engaging visual elements, we ensured that the design was both fun and functional. Interactive feedback such as animations and visual cues provided users with real-time responses to their actions.",
+        image: '/images/starlight/final-3.png',
+        imageAlt: 'Starlight design system and interactions',
+      },
+    ],
+    projectLinks: [
+      {
+        label: 'View Prototype',
+        href: 'https://www.figma.com/proto/lEtsIdnSO4sZcHOynEYsGA/Starlight-Project-File?page-id=209%3A2386&type=design&node-id=209-2461&viewport=4305%2C270%2C0.35&t=1qsDuzJ5xSM03ff1-1&scaling=scale-down&starting-point-node-id=209%3A2461&mode=design',
+        icon: 'figma',
+      },
+      {
+        label: 'Final Presentation',
+        href: 'https://drive.google.com/file/d/1jP9g2Q8S_fcv1eR17Rv9WOcXu4MLerqV/view?usp=sharing',
+        icon: 'doc',
+      },
+    ],
     outcome: {
       title: 'Outcome',
-      body: "The redesigned portal was presented to Starlight stakeholders at the end of the engagement. Usability testing with 5 volunteers showed a 40% reduction in task completion time for key coordinator workflows. The impact dashboard resonated strongly: multiple participants said seeing their hours translated into 'wishes granted' made them feel more connected to the organisation's mission.",
+      body: "The redesigned mobile experience was presented to Starlight stakeholders at the end of the engagement. Usability testing with 7 participants showed a significant reduction in task completion time for key donation workflows. The impact dashboard resonated strongly: multiple participants said seeing their donation translated into 'wishes granted' made them feel more connected to the organisation's mission. Stakeholder feedback validated the streamlined donation process and the use of emotionally resonant language throughout.",
     },
-    reflection: "This project taught me that the emotional context of a product matters as much as its functional requirements. We weren't just designing a scheduling tool. We were designing something that volunteers would use on the most meaningful days of their year. Getting that emotional register right required listening more carefully than I had before.",
+    reflection: "This project taught me that the emotional context of a product matters as much as its functional requirements. We weren't just designing a donation form. We were designing a moment of connection between a donor and a child in hospital. Getting that emotional register right required listening more carefully than I had in any previous project. I also learned how much business goals and user goals overlap when the design is right: a better donor experience directly translates to more completed donations.",
     next: { id: 'big-issue', title: 'The Big Issue' },
   },
 
@@ -157,7 +225,7 @@ export const caseStudies = {
     tags: ['Hi-Fi Prototyping', 'UI Design', 'UX Research'],
     heroImage: '/images/big-issue/final-2.png',
     overview:
-      "Designing a dual-interface booking and resource management platform for The Big Issue, a social enterprise that employs people experiencing homelessness and operates Charcoal Lane, a training restaurant and employment program.",
+      "The Big Issue is a not-for-profit organisation dedicated to providing opportunities for people experiencing homelessness, marginalisation, and disadvantage. The brief asked for a teacher portal that made it easy for teachers to organise and manage excursions to The Big Issue Classroom, whilst providing clear and accessible information and giving staff the tools to streamline customer requests.",
     role: 'UX Designer',
     timeline: '12 weeks',
     tools: 'Figma, Miro, FigJam',
@@ -165,50 +233,115 @@ export const caseStudies = {
     problem: {
       title: 'The Problem',
       body: [
-        "Without a centralised platform, coordinators managed vendor schedules and teacher-student placements through spreadsheets and phone calls. This led to miscommunications, double bookings, and missed sessions that directly impacted the livelihoods of vendors and the training outcomes for students.",
-        "The challenge was to design a system that worked equally well for two very different user groups: admin coordinators managing logistics, and teachers tracking student progress and resources.",
+        "Teachers organising The Big Issue Classroom excursions have limited time to manage the process. From prior research by Harness student Debbie Yee, we learned that 'teachers are chronically time-poor due to the multifaceted challenges and pain points of their profession.' Without a centralised platform, coordinators managed vendor schedules and teacher-student placements through spreadsheets and phone calls.",
+        "The challenge was to design a system that worked equally well for two very different user groups: admin coordinators managing logistics, and teachers tracking student progress and resources. The portal needed to accommodate all types of teachers regardless of technological literacy.",
       ],
-      insight: "Two user groups with different mental models, different levels of digital literacy, and very different stakes. One wrong booking affects someone's income.",
+      insight: "Two user groups with different mental models, different levels of digital literacy, and very different stakes. One wrong booking affects someone's income and a teacher's entire excursion.",
     },
     process: [
       {
         num: '01',
-        title: 'Research',
-        description: 'Conducted interviews with program coordinators and reviewed existing documentation to understand how bookings were managed and where handoffs broke down.',
+        title: 'Research and Stakeholder Interviews',
+        description: 'Interviewed The Big Issue Manager of Education Enterprises and Program Coordinator. Three key insights emerged: the primary goals are customer retention and time savings; the portal must accommodate all levels of technological literacy; and the experience must be engaging enough to encourage rebooking.',
         image: '/images/big-issue/sketches.png',
       },
       {
         num: '02',
         title: 'User Flows',
-        description: 'Mapped separate task flows for admin and teacher user types. Identified divergence points where the same data needed to look and behave differently for each audience.',
+        description: "Mapped separate task flows for admin and teacher user types. Identified divergence points where the same data needed to look and behave differently for each audience. Identifying 'jobs to be done' helped prioritise features that would provide the most value.",
         image: '/images/big-issue/flow-admin.png',
       },
       {
         num: '03',
         title: 'Wireframes',
-        description: 'Rapid wireframing across both interfaces to validate structural decisions before moving to high fidelity. Tested with users to confirm navigation patterns.',
+        description: 'Focused on a clean, intuitive interface that would be easy for teachers to navigate. Key elements included: Dashboard Overview, Booking Calendar, Resource Library, Communication Tools, and a FAQ page. Validated with stakeholders before moving to high fidelity.',
         image: '/images/big-issue/wireframes.png',
       },
       {
         num: '04',
-        title: 'Design System',
-        description: 'Built a lightweight design system covering buttons, forms, cards, navigation states, and status indicators to ensure consistency across both interfaces.',
+        title: 'User Testing',
+        description: '5 user tests conducted across varying levels of technological literacy. Positive: easy navigation, clean aesthetic, clear resource organisation. Improvements made: added an onboarding tour for new users and a colour-coded booking status system based on feedback.',
         image: '/images/big-issue/dashboard.png',
       },
     ],
-    processNote: 'The dual-interface challenge required us to constantly ask: is this the same problem, or two different problems that share data? Getting that distinction right shaped every design decision.',
+    processNote: 'The dual-interface challenge required constantly asking: is this the same problem, or two different problems that share data? Getting that distinction right shaped every design decision.',
     designImages: [
-      { src: '/images/big-issue/bookings.png', caption: 'Bookings list view: admin interface' },
-      { src: '/images/big-issue/resources.png', caption: 'Resources folder: teacher interface' },
-      { src: '/images/big-issue/prototype-teacher.png', caption: 'Hi-fi prototype: teacher scheduling view' },
-      { src: '/images/big-issue/prototype-admin.png', caption: 'Hi-fi prototype: admin coordinator dashboard' },
+      { src: '/images/big-issue/flow-teacher.png', caption: 'Teacher user flow: from login through to excursion management' },
+      { src: '/images/big-issue/prototype-teacher.png', caption: 'Hi-fi prototype: teacher dashboard and booking view' },
+      { src: '/images/big-issue/prototype-admin.png', caption: 'Hi-fi prototype: admin coordinator interface' },
     ],
-    finalImage: '/images/big-issue/final-1.png',
+    finalImage: null,
+    features: [
+      {
+        num: 'Key Feature 01',
+        title: 'Centralised Resources Hub.',
+        body: 'The Centralised Resource Hub provides easy access to all essential planning materials, including risk assessments and educational resources. This ensures that teachers have everything they need in one place, making the excursion planning process more efficient and less time-consuming.',
+        image: '/images/big-issue/resources.png',
+        imageAlt: 'Big Issue centralised resources hub interface',
+        link: 'https://www.figma.com/proto/yNVHfgwhz7mSOy9I4ynAH4/The-Big-Issue-Project-File?node-id=334-29284&viewport=1168%2C511%2C0.06&t=mboqaqkaI9VGR6o2-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=334%3A29284&show-proto-sidebar=1',
+        linkLabel: 'View Teacher Prototype',
+      },
+      {
+        num: 'Key Feature 02',
+        title: 'Booking Management.',
+        body: 'Booking Management simplifies the scheduling and organising of excursions. Teachers can easily view, modify, and confirm their bookings. This feature streamlines the administrative tasks associated with planning an excursion, with colour-coded status indicators for at-a-glance clarity.',
+        image: '/images/big-issue/bookings.png',
+        imageAlt: 'Big Issue booking management interface',
+        link: 'https://www.figma.com/proto/yNVHfgwhz7mSOy9I4ynAH4/The-Big-Issue-Project-File?node-id=473-31255&viewport=1168%2C511%2C0.06&t=mboqaqkaI9VGR6o2-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=473%3A31255&show-proto-sidebar=1',
+        linkLabel: 'View Admin Prototype',
+      },
+      {
+        num: 'Key Feature 03',
+        title: 'Support and FAQs.',
+        body: "The Support and FAQs section offers comprehensive assistance to users. It includes answers to common questions and provides detailed guidance on using the portal's features. This ensures that teachers can quickly resolve any issues and make the most of the available resources.",
+        image: '/images/big-issue/contact.png',
+        imageAlt: 'Big Issue support and FAQs page',
+      },
+    ],
+    uiPrinciples: {
+      label: 'User Interface Design Principles',
+      heading: 'The design adhered to key UI principles: simplicity, consistency, and accessibility.',
+      subtext: "We used a clean and modern aesthetic that aligned with The Big Issue's branding, ensuring that the portal was visually appealing and easy to use.",
+      items: [
+        {
+          image: '/images/big-issue/dashboard.png',
+          title: 'Ease of Use',
+          body: 'The interface is intuitive and user-friendly, allowing teachers to navigate effortlessly through planning, booking, and managing excursions without unnecessary complexity.',
+        },
+        {
+          image: '/images/big-issue/prototype-teacher.png',
+          title: 'Clarity',
+          body: 'Clear and concise information presentation helps teachers quickly find and understand the resources and tools they need, minimising confusion and enhancing usability.',
+        },
+        {
+          image: '/images/big-issue/prototype-admin.png',
+          title: 'Efficiency',
+          body: 'The portal streamlines administrative tasks, providing quick access to essential tools and resources, saving teachers valuable time and reducing effort.',
+        },
+      ],
+    },
+    projectLinks: [
+      {
+        label: 'Teacher Prototype',
+        href: 'https://www.figma.com/proto/yNVHfgwhz7mSOy9I4ynAH4/The-Big-Issue-Project-File?node-id=334-29284&viewport=1168%2C511%2C0.06&t=mboqaqkaI9VGR6o2-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=334%3A29284&show-proto-sidebar=1',
+        icon: 'figma',
+      },
+      {
+        label: 'Admin Prototype',
+        href: 'https://www.figma.com/proto/yNVHfgwhz7mSOy9I4ynAH4/The-Big-Issue-Project-File?node-id=473-31255&viewport=1168%2C511%2C0.06&t=mboqaqkaI9VGR6o2-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=473%3A31255&show-proto-sidebar=1',
+        icon: 'figma',
+      },
+      {
+        label: 'Final Presentation',
+        href: 'https://drive.google.com/file/d/13leZ89ZFXtNSbmCkNC2WOfhAWxiBwIN/view?usp=drive_link',
+        icon: 'doc',
+      },
+    ],
     outcome: {
       title: 'Outcome',
-      body: "Delivered a complete hi-fi prototype covering both the admin and teacher interfaces, validated through usability testing. Key feedback: coordinators felt the booking conflict detection feature would save them significant time each week, and teachers appreciated having student progress and resources in a single view rather than split across tools.",
+      body: "Delivered complete hi-fi prototypes for both the admin and teacher interfaces, validated through usability testing. Coordinators felt the booking conflict detection and colour-coded status system would save them significant time each week. Teachers appreciated having student progress and resources in a single view. Stakeholder feedback highlighted the booking management system and file organisation as standout features.",
     },
-    reflection: "Designing for two distinct user types forced me to be more rigorous about separating user needs from business needs. The shared data model meant technical constraints shaped the design. Learning to work with those constraints rather than around them was one of the most valuable skills I developed on this project.",
+    reflection: "Designing for two distinct user types forced me to be more rigorous about separating user needs from business needs. The shared data model meant technical constraints shaped the design. Learning to work within those constraints rather than around them was one of the most valuable skills I developed on this project. I also learned that paying attention to the smallest details, from colour contrast to spacing between elements, directly affects whether a product feels credible and trustworthy.",
     next: { id: 'peoples-first', title: 'People First Bank' },
   },
 
@@ -219,53 +352,109 @@ export const caseStudies = {
     tags: ['Data Analysis', 'UX Research'],
     heroImage: 'https://cdn.prod.website-files.com/65e6a01f2073c7705362cda6/664c1e8352be1664d3337432_Frame%2024.png',
     overview:
-      "UX research and competitive analysis supporting the post-merger transition of People's Choice Credit Union and Heritage Bank into People First Bank, one of Australia's largest customer-owned banks.",
+      "Approached by Heritage Bank and People's Choice, alongside a talented team from Harness Projects, to conduct user research and analysis for People First Bank. Our goal was to determine how the newly merged bank could effectively convey an engaging message to its younger target audience and identify which products or features were most important to them. People First Bank is Australia's new leading member-owned bank, serving over 700,000 members as a robust national mutual alternative to the big banks.",
     role: 'UX Researcher',
-    timeline: '8 weeks',
+    timeline: '7 weeks',
     tools: 'Miro, Dovetail, Figma',
     type: 'Bootcamp Project',
     problem: {
-      title: 'The Problem',
+      title: 'The Challenge',
       body: [
-        "The merger of two legacy banks created a critical UX challenge: two customer bases with different mental models, different digital banking habits, and different expectations, now expected to converge on a single platform.",
-        "The product team needed to understand which digital features mattered most to customers from each legacy bank, where the biggest UX gaps existed, and how to sequence the roadmap for the new unified People First Bank app.",
+        "The merger of Heritage Bank and People's Choice created a new challenge: two customer bases with different mental models, different digital banking habits, and different expectations, now expected to converge on a single platform. The bank traditionally served older generations but now needed to attract and retain Gen Z and Millennials.",
+        "Midway through the project, the brief shifted. The client was no longer interested in researching potential design options for the new homepage. Instead, People First Bank wanted insights and actionable recommendations for engaging and attracting their younger target audience, specifically around which products and features mattered most to them.",
       ],
-      insight: "Customers valued the community feel of a credit union but measured trust by digital capability. The merger risked losing both if handled poorly.",
+      insight: "Customers valued the community feel of a credit union but measured trust by digital capability. The merger risked losing both if the transition was handled without understanding what the younger demographic actually wanted.",
     },
     process: [
       {
         num: '01',
-        title: 'Competitive Audit',
-        description: "Conducted a detailed audit of both legacy digital banking platforms, benchmarking against industry standards and identifying feature gaps between the two existing experiences.",
+        title: 'Stakeholder Interviews',
+        description: "Conducted in-depth interviews to uncover five key business areas: target demographic priorities, technological capabilities, merger goals, ESG values, and product offerings. The bank was looking to streamline 200+ products and needed insight into which mattered most to younger users.",
         image: '/images/peoples-first/existing.png',
       },
       {
         num: '02',
-        title: 'Platform Analysis',
-        description: 'Reviewed the existing Heritage Bank and People\'s Choice digital platforms side by side, cataloguing UX patterns, information architecture, and feature parity across both.',
+        title: 'Research Design',
+        description: "Designed a three-method research plan combining stakeholder interviews, 1-on-1 long-form user interviews, and surveys. Business objectives focused on increasing target demographic acquisition, creating a unified brand image, and identifying key digital-first features.",
         image: '/images/peoples-first/heritage.png',
       },
       {
         num: '03',
-        title: 'Research Synthesis',
-        description: 'Analysed customer sentiment data and synthesised findings into a prioritised list of UX recommendations, organised by customer impact and implementation effort.',
+        title: 'User Interviews and Surveys',
+        description: 'Recruited Millennial and Gen Z participants for in-depth interviews and surveys. Research objectives covered understanding of mutual banks, key products and offerings, and the role of ESG values and reputation in financial decision-making.',
         image: '/images/peoples-first/peoples.png',
       },
       {
         num: '04',
-        title: 'Research Workshop',
-        description: 'Ran a collaborative workshop session to validate findings with stakeholders and align on the opportunity areas that would most directly affect customer satisfaction post-merger.',
+        title: 'Synthesis and Proto-Persona',
+        description: 'Synthesised interview and survey data into a proto-persona illustrating the target demographic goals, needs, pain points, and motivations. This grounded our recommendations in real user data rather than assumptions.',
         image: '/images/peoples-first/research.jpg',
       },
     ],
-    processNote: 'This was a research-heavy project with no hi-fi design output. The deliverable was evidence and insight that the product team could act on. That required a different kind of rigour.',
+    processNote: 'This was a research-heavy engagement with no hi-fi design output. The deliverable was evidence and insight that the product team could act on. That required a different kind of rigour: communicating findings clearly is itself a design problem.',
     designImages: [],
     finalImage: null,
+    insights: [
+      {
+        num: '01',
+        title: 'Millennials lack knowledge of mutual banks',
+        body: 'Millennials lack knowledge of what a mutual bank is and the benefits that come with being a member-owned institution. This represents a significant education opportunity for People First Bank.',
+      },
+      {
+        num: '02',
+        title: 'Competitive products are the top priority',
+        body: 'Millennials prioritise competitive products above all else. Interest rates, fees, and product features outweigh brand affinity or community values when choosing a financial institution.',
+      },
+      {
+        num: '03',
+        title: 'Seamless digital experience is expected',
+        body: 'Millennials value a seamless, efficient, and enjoyable user experience. A subpar digital experience is a dealbreaker, regardless of how competitive the products are.',
+      },
+      {
+        num: '04',
+        title: 'ESG is expected, not a differentiator',
+        body: "Millennials expect ESG practices from their banks — it is no longer their main driver. Ethical positioning alone will not attract or retain younger customers; it must be paired with strong products and a great digital experience.",
+      },
+      {
+        num: '05',
+        title: 'Reputation and values are not priorities',
+        body: 'Contrary to assumptions, reputation and alignment of values are not primary drivers for Millennials choosing a bank. Product and experience quality consistently ranked higher.',
+      },
+    ],
+    recommendations: [
+      {
+        num: '01',
+        title: 'Social media education campaign',
+        body: "Educate younger audiences on the benefits of mutual banking via Instagram and TikTok with videos and testimonials showcasing community focus and environmental responsibility. Leverage People First Bank's community story as a differentiator once competitive products are in place.",
+      },
+      {
+        num: '02',
+        title: 'Invest in competitive products',
+        body: 'Investigate and develop best-in-market products with minimal fees. Conduct a market analysis for product enhancement and consolidation of the existing 200+ product catalogue. Younger customers will not consider a bank that cannot compete on core financial products.',
+      },
+      {
+        num: '03',
+        title: 'Holistic digital experience uplift',
+        body: 'Assess and improve the comprehensive digital experience through streamlined platforms, chatbot support, optimised navigation, and enhanced mobile app functionality. The digital experience must match the quality of the products to retain younger customers.',
+      },
+    ],
+    projectLinks: [
+      {
+        label: 'Final Report',
+        href: 'https://drive.google.com/file/d/1fY_bXCzLK6WISWgHhCa2bx4OzclQV-9i/view?usp=sharing',
+        icon: 'doc',
+      },
+      {
+        label: 'Final Presentation',
+        href: 'https://drive.google.com/file/d/1dLqxwPQR-RITj8VRoEeZBPb0xuZgY2Xk/view?usp=sharing',
+        icon: 'doc',
+      },
+    ],
     outcome: {
       title: 'Outcome',
-      body: "Delivered a synthesis report identifying the top UX priorities for the People First Bank digital platform. Key recommendations included a unified account overview, consistent notification system, and simplified onboarding flow for customers migrating from either legacy platform. The research highlighted that seamless access to existing account history was the single most important trust factor for migrating customers.",
+      body: "Delivered a synthesis report and presentation identifying the top UX and product priorities for the People First Bank digital platform. Five key insights gave the product team a clear picture of what Millennials actually value, cutting through assumptions about ESG and brand loyalty. Three actionable recommendations provided a sequenced roadmap: educate on mutual banking, build competitive products, then invest in digital experience uplift.",
     },
-    reflection: "Research projects without a design output taught me that communicating findings clearly is a design problem in itself. The way you frame a recommendation determines whether it gets acted on. I came out of this project a stronger communicator and a more structured thinker.",
+    reflection: "Research projects without a design output taught me that communicating findings clearly is a design problem in itself. The way you frame a recommendation determines whether it gets acted on. I came out of this project a stronger communicator and a more structured thinker. I also learned to be adaptable: when the brief changed midway through, we had to quickly reframe our research objectives without losing the work already done.",
     next: { id: 'starlight', title: "Starlight Children's Foundation" },
   },
 
@@ -323,12 +512,12 @@ export const caseStudies = {
       title: 'The Brief',
       body: [
         "Automotive dealerships are among the most brand-controlled built environments. Every surface, material, and spatial proportion is governed by manufacturer standards. The challenge was to meet those standards across two different brands simultaneously, within the constraints of local planning requirements and client budget.",
-        "Both projects required close collaboration with the manufacturer CI (Corporate Identity) teams in Germany and the UK, requiring clear communication and careful documentation management.",
+        "Both projects required close collaboration with the manufacturer CI teams in Germany and the UK, requiring clear communication and careful documentation management.",
       ],
       insight: "Managing two brand systems in parallel clarified something: good constraints produce better outcomes when you understand the why behind each rule.",
     },
     process: [
-      { num: '01', title: 'CI Compliance', description: 'Mapped both brands\' Corporate Identity requirements and identified conflicts with local planning codes, resolving each through negotiation with manufacturers.', image: null },
+      { num: '01', title: 'CI Compliance', description: "Mapped both brands' Corporate Identity requirements and identified conflicts with local planning codes, resolving each through negotiation with manufacturers.", image: null },
       { num: '02', title: 'Concept Design', description: 'Developed site-specific concept designs for each project, adapting global templates to local site conditions.', image: null },
       { num: '03', title: 'Documentation', description: 'Produced permit and construction documentation packages for both projects, managing the coordination between local consultants and international brand teams.', image: null },
     ],
@@ -400,7 +589,7 @@ export const caseStudies = {
       insight: "A premium brand showroom is a physical UX. The customer journey through the space is as deliberate as any digital flow.",
     },
     process: [
-      { num: '01', title: 'Concept Design', description: 'Developed multiple concept directions exploring the tension between Porsche\'s precision engineering and the sensory quality of the customer experience.', image: null },
+      { num: '01', title: 'Concept Design', description: "Developed multiple concept directions exploring the tension between Porsche's precision engineering and the sensory quality of the customer experience.", image: null },
       { num: '02', title: 'Facade Design', description: 'Designed the main street facade to function as a display surface, showcasing vehicles to passing traffic while maintaining the quality and restraint of the Porsche brand.', image: null },
       { num: '03', title: 'Interior Planning', description: 'Developed the interior spatial sequence from arrival through showroom to customer lounge, optimising both customer experience and operational efficiency.', image: null },
     ],

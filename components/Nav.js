@@ -24,6 +24,7 @@ export default function Nav() {
     if (isProjectPage) return section === 'work';
     if (!isHomePage) return false;
     if (section === 'work') return activeHash === '#work' || activeHash === '' || activeHash === '#home';
+    if (section === 'apps') return activeHash === '#apps';
     if (section === 'architecture') return activeHash === '#architecture';
     if (section === 'about') return activeHash === '#about';
     return false;
@@ -67,6 +68,13 @@ export default function Nav() {
             onClick={close}
           >
             Work
+          </a>
+          <a
+            href={navHref('#apps')}
+            className={`sidebar-link ${isActive('apps') ? 'active' : ''}`}
+            onClick={close}
+          >
+            Apps
           </a>
           <a
             href={navHref('#architecture')}
@@ -124,6 +132,7 @@ export default function Nav() {
       {open && (
         <div className="mobile-menu">
           <a href="/#work" className="sidebar-link" onClick={close}>Work</a>
+          <a href="/#apps" className="sidebar-link" onClick={close}>Apps</a>
           <a href="/#architecture" className="sidebar-link" onClick={close}>Architecture</a>
           <a href="/#about" className="sidebar-link" onClick={close}>About</a>
           <div className="mobile-menu-ext">
