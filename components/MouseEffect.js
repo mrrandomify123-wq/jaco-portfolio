@@ -4,7 +4,7 @@ export default function MouseEffect() {
   const canvasRef = useRef(null);
   const spotlightRef = useRef(null);
 
-  // Spotlight gradient — updates DOM directly to avoid re-renders
+  // Spotlight — direct DOM update, no re-renders
   useEffect(() => {
     const el = spotlightRef.current;
     if (!el) return;
@@ -15,7 +15,7 @@ export default function MouseEffect() {
     return () => window.removeEventListener('mousemove', onMove);
   }, []);
 
-  // Canvas particle field
+  // Particle field
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -29,19 +29,17 @@ export default function MouseEffect() {
     window.addEventListener('resize', resize);
 
     const mouse = { x: -9999, y: -9999 };
-    const onMove = (e) => {
-      mouse.x = e.clientX;
-      mouse.y = e.clientY;
-    };
+    const onMove = (e) => { mouse.x = e.clientX; mouse.y = e.clientY; };
     window.addEventListener('mousemove', onMove);
 
-    const particles = Array.from({ length: 70 }, () => ({
+    // 130 particles for a denser, more visible field
+    const particles = Array.from({ length: 130 }, () => ({
       x: Math.random() * window.innerWidth,
       y: Math.random() * window.innerHeight,
-      vx: (Math.random() - 0.5) * 0.22,
-      vy: (Math.random() - 0.5) * 0.22,
-      r: Math.random() * 1.1 + 0.3,
-      a: Math.random() * 0.28 + 0.04,
+      vx: (Math.random() - 0.5) * 0.2,
+      vy: (Math.random() - 0.5) * 0.2,
+      r: Math.random() * 1.3 + 0.3,
+      a: Math.random() * 0.32 + 0.06,
     }));
 
     let raf;
@@ -53,13 +51,12 @@ export default function MouseEffect() {
         const dy = p.y - mouse.y;
         const dist = Math.sqrt(dx * dx + dy * dy);
 
-        if (dist < 130 && dist > 0) {
-          const force = ((130 - dist) / 130) * 0.55;
+        if (dist < 140 && dist > 0) {
+          const force = ((140 - dist) / 140) * 0.6;
           p.vx += (dx / dist) * force;
           p.vy += (dy / dist) * force;
         }
 
-        // Damping + gentle random drift
         p.vx *= 0.97;
         p.vy *= 0.97;
         p.vx += (Math.random() - 0.5) * 0.012;
@@ -68,7 +65,6 @@ export default function MouseEffect() {
         p.x += p.vx;
         p.y += p.vy;
 
-        // Wrap edges
         if (p.x < -4) p.x = canvas.width + 4;
         if (p.x > canvas.width + 4) p.x = -4;
         if (p.y < -4) p.y = canvas.height + 4;

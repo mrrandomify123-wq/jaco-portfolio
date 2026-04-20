@@ -1,0 +1,5 @@
+node_modules
+.next
+"18_Website Assets"
+*.zip
+*.json.bak
