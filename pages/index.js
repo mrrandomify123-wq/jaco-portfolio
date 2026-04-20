@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Link from 'next/link';
 import { useEffect } from 'react';
 import ProjectCard from '../components/ProjectCard';
 import { CtaBanner, Footer } from '../components/CtaBanner';
@@ -85,9 +86,27 @@ export default function Home() {
         <div className="section-header">
           <p className="section-label">Architecture</p>
         </div>
-        <div className="projects-list">
+        <div className="arch-project-list">
           {architectureProjects.map((project, i) => (
-            <ProjectCard key={project.id} project={project} delay={i * 100} />
+            <Link
+              key={project.id}
+              href={project.href}
+              className="arch-project-row fade-in"
+              style={{ transitionDelay: `${i * 70}ms` }}
+            >
+              <div className="arch-row-left">
+                <p className="arch-row-title">{project.title}</p>
+                <div className="project-tags">
+                  {project.tags.map((tag) => (
+                    <span key={tag} className="tag">{tag}</span>
+                  ))}
+                </div>
+              </div>
+              <div className="arch-row-right">
+                <span className="arch-row-date">{project.date}</span>
+                <span className="arch-row-arrow">↗</span>
+              </div>
+            </Link>
           ))}
         </div>
       </section>

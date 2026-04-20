@@ -199,7 +199,7 @@ export default function ProjectPage() {
 
       {/* Next project */}
       {project.next && (
-        <Link href={`/work/${project.next.id}`} className="project-next-link" style={{ display: 'block' }}>
+        <Link href={`/work/${project.next.id}`} className="project-next-link">
           <div className="project-next">
             <div>
               <p className="project-next-label">Next project</p>
