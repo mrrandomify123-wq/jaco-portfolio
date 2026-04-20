@@ -244,12 +244,6 @@ export default function ProjectPage() {
                     <p className="feature-num">{feature.num}</p>
                     <h3 className="feature-title">{feature.title}</h3>
                     <p className="feature-body">{feature.body}</p>
-                    {feature.link && (
-                      <a href={feature.link} target="_blank" rel="noopener noreferrer" className="feature-link-btn">
-                        <FigmaIcon />
-                        {feature.linkLabel || 'View Prototype'} ↗
-                      </a>
-                    )}
                   </div>
                   {feature.link ? (
                     <a href={feature.link} target="_blank" rel="noopener noreferrer" className="feature-image-wrap">
