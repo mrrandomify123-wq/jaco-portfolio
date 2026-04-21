@@ -358,9 +358,10 @@ img {
 
 .hero-title em {
   font-style: italic;
-  font-family: var(--serif);
+  font-family: var(--sans);
   color: var(--text-muted);
-  font-weight: 400;
+  font-weight: 300;
+  letter-spacing: -0.01em;
 }
 
 .hero-cursor {
@@ -1268,27 +1269,44 @@ img {
   display: block;
 }
 
-/* Clickable prototype images get a hover overlay */
-a.feature-image-wrap::after {
-  content: 'View Prototype ↗';
+/* Clickable prototype images — always-visible badge + hover dim */
+a.feature-image-wrap::before {
+  content: 'Prototype ↗';
   position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.65);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 7px 18px;
+  border-radius: 20px;
   font-size: 11px;
   font-family: var(--mono);
   font-weight: 700;
   color: var(--text);
   letter-spacing: 0.1em;
-  text-transform: uppercase;
-  opacity: 0;
-  transition: opacity 0.25s;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+a.feature-image-wrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0);
+  transition: background 0.2s;
 }
 
 a.feature-image-wrap:hover::after {
-  opacity: 1;
+  background: rgba(0, 0, 0, 0.25);
+}
+
+/* Dual prototype images side by side */
+.feature-images-dual {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
 }
 
 /* ===== UI PRINCIPLES (3-col) ===== */
@@ -1667,11 +1685,11 @@ a.feature-image-wrap:hover::after {
   margin-top: 4px;
 }
 
-/* ===== Process steps — full-width single column, image above text */
+/* ===== Process steps — alternating text/image layout ===== */
 .project-process-steps {
   display: flex;
   flex-direction: column;
-  gap: 52px;
+  gap: 0;
   margin-top: 32px;
 }
 
@@ -1679,6 +1697,24 @@ a.feature-image-wrap:hover::after {
   display: flex;
   flex-direction: column;
   gap: 0;
+  padding: 40px 0;
+  border-top: 1px solid var(--border);
+}
+
+/* Side-by-side when image present */
+.process-step--has-image {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+/* Flip: image on left, text on right */
+.process-step--has-image.process-step--flip .process-step-body {
+  order: 2;
+}
+.process-step--has-image.process-step--flip .process-step-image {
+  order: 1;
 }
 
 .process-step-image {
@@ -1687,7 +1723,11 @@ a.feature-image-wrap:hover::after {
   display: block;
   border-radius: var(--radius);
   background: var(--surface);
-  margin-bottom: 20px;
+}
+
+/* No image: full-width text, less padding */
+.process-step:not(.process-step--has-image) {
+  padding: 32px 0;
 }
 
 .process-step-body {
@@ -1740,6 +1780,57 @@ a.feature-image-wrap:hover::after {
   display: block;
   border-radius: var(--radius);
   background: var(--surface);
+}
+
+/* Clickable design image (prototype link) */
+a.project-design-image-link {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-decoration: none;
+  position: relative;
+}
+
+a.project-design-image-link img {
+  border-radius: var(--radius);
+  transition: opacity 0.2s;
+}
+
+a.project-design-image-link::before {
+  content: 'Prototype ↗';
+  position: absolute;
+  bottom: 36px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 7px 18px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-family: var(--mono);
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+a.project-design-image-link::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 24px; /* above caption */
+  border-radius: var(--radius);
+  background: rgba(0, 0, 0, 0);
+  transition: background 0.2s;
+  pointer-events: none;
+}
+
+a.project-design-image-link:hover::after {
+  background: rgba(0, 0, 0, 0.22);
 }
 
 .project-image-caption {
@@ -1905,6 +1996,183 @@ a.feature-image-wrap:hover::after {
   color: var(--text-muted);
 }
 
+/* ===== USER TESTING SECTION ===== */
+.user-testing-header {
+  margin-bottom: 40px;
+}
+
+.user-testing-heading {
+  font-size: clamp(22px, 2.4vw, 32px);
+  font-weight: 400;
+  color: var(--text);
+  letter-spacing: -0.025em;
+  line-height: 1.25;
+  margin-bottom: 16px;
+  max-width: 640px;
+}
+
+.user-testing-body {
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.8;
+  max-width: 600px;
+}
+
+.user-testing-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.user-testing-col-label {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-family: var(--mono);
+  margin-bottom: 20px;
+  padding: 6px 12px;
+  border-radius: 100px;
+  display: inline-block;
+}
+
+.user-testing-col-label--positive {
+  background: rgba(52, 199, 89, 0.12);
+  border: 1px solid rgba(52, 199, 89, 0.25);
+  color: #34c759;
+}
+
+.user-testing-col-label--improvement {
+  background: rgba(255, 159, 10, 0.12);
+  border: 1px solid rgba(255, 159, 10, 0.25);
+  color: #ff9f0a;
+}
+
+.user-testing-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.user-testing-item {
+  padding: 20px 0;
+  border-top: 1px solid var(--border);
+}
+
+.user-testing-item:last-child {
+  border-bottom: 1px solid var(--border);
+}
+
+.user-testing-item-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: -0.01em;
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+
+.user-testing-item-body {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.75;
+}
+
+/* ===== DESIGN SYSTEM SECTION ===== */
+.design-system-header {
+  margin-bottom: 36px;
+}
+
+.design-system-heading {
+  font-size: clamp(20px, 2.2vw, 28px);
+  font-weight: 400;
+  color: var(--text);
+  letter-spacing: -0.025em;
+  line-height: 1.25;
+  margin-bottom: 12px;
+  max-width: 600px;
+}
+
+.design-system-subtext {
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.75;
+  max-width: 560px;
+}
+
+.design-system-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.design-system-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.design-system-item img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  background: var(--surface);
+  display: block;
+}
+
+.design-system-item-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+
+.design-system-item-body {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+/* ===== DEVELOPER HANDOFF SECTION ===== */
+.dev-handoff-images {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* ===== ARCHITECTURE BENTO GALLERY ===== */
+.arch-bento {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 8px;
+  margin-top: 32px;
+}
+
+.arch-bento-item {
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--surface);
+  min-height: 200px;
+}
+
+.arch-bento-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.arch-bento-item:hover img {
+  transform: scale(1.02);
+}
+
+/* Bento span patterns */
+.arch-bento-item--wide   { grid-column: span 8; }
+.arch-bento-item--narrow { grid-column: span 4; }
+.arch-bento-item--full   { grid-column: span 12; }
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1100px) {
   .project-card {
@@ -1981,6 +2249,31 @@ a.feature-image-wrap:hover::after {
 
   .arch-cards-grid {
     grid-template-columns: 1fr;
+  }
+
+  .user-testing-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .design-system-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .process-step--has-image {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .process-step--has-image.process-step--flip .process-step-body,
+  .process-step--has-image.process-step--flip .process-step-image {
+    order: unset;
+  }
+
+  .arch-bento-item--wide,
+  .arch-bento-item--narrow,
+  .arch-bento-item--full {
+    grid-column: span 6;
   }
 
   .project-overview {
@@ -2101,5 +2394,15 @@ a.feature-image-wrap:hover::after {
 
   .project-overview {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .design-system-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .arch-bento-item--wide,
+  .arch-bento-item--narrow,
+  .arch-bento-item--full {
+    grid-column: span 12;
   }
 }

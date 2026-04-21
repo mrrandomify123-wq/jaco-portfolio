@@ -65,6 +65,7 @@ export default function ProjectPage() {
   }
 
   const isUX = project.category === 'UX / Product Design';
+  const isArch = project.category === 'Architecture';
   const backHref = isUX ? '/#work' : '/#architecture';
 
   return (
@@ -75,7 +76,7 @@ export default function ProjectPage() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
-      {/* ── PART 1: header, process, research ── */}
+      {/* ── PART 1: header, overview, process ── */}
       <div className="project-detail">
 
         <Link href={backHref} className="project-back">
@@ -115,7 +116,7 @@ export default function ProjectPage() {
           ))}
         </div>
 
-        {/* Small links bar (just below metadata) */}
+        {/* Small links bar */}
         {project.projectLinks && project.projectLinks.length > 0 && (
           <div className="project-links-bar fade-in">
             {project.projectLinks.map((link) => (
@@ -135,18 +136,34 @@ export default function ProjectPage() {
         </div>
 
         {/* Problem / Challenge */}
-        <div className="project-section fade-in">
-          <p className="project-section-label">{project.problem.title}</p>
-          <div className="project-section-body">
-            {project.problem.body.map((para, i) => <p key={i}>{para}</p>)}
+        {project.problem && (
+          <div className="project-section fade-in">
+            <p className="project-section-label">{project.problem.title}</p>
+            <div className="project-section-body">
+              {project.problem.body.map((para, i) => <p key={i}>{para}</p>)}
+            </div>
+            {project.problem.insight && (
+              <div className="project-insight fade-in"><p>{project.problem.insight}</p></div>
+            )}
           </div>
-          {project.problem.insight && (
-            <div className="project-insight fade-in"><p>{project.problem.insight}</p></div>
-          )}
-        </div>
+        )}
 
-        {/* Process */}
-        {project.process && project.process.length > 0 && (
+        {/* ── Architecture: bento gallery ── */}
+        {isArch && project.galleryImages && project.galleryImages.length > 0 && (
+          <div className="project-section fade-in">
+            <p className="project-section-label">Project Images</p>
+            <div className="arch-bento">
+              {project.galleryImages.map((src, i) => (
+                <div key={i} className={`arch-bento-item fade-in arch-bento-item--${bentoSpan(i, project.galleryImages.length)}`}>
+                  <img src={src} alt={`${project.title} — image ${i + 1}`} loading="lazy" />
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Process (UX projects) */}
+        {!isArch && project.process && project.process.length > 0 && (
           <div className="project-section fade-in">
             <p className="project-section-label">Process</p>
             {project.processNote && (
@@ -155,16 +172,16 @@ export default function ProjectPage() {
               </div>
             )}
             <div className="project-process-steps">
-              {project.process.map((step) => (
-                <div key={step.num} className="process-step fade-in">
-                  {step.image && (
-                    <img src={step.image} alt={step.title} className="process-step-image" loading="lazy" />
-                  )}
+              {project.process.map((step, idx) => (
+                <div key={step.num} className={`process-step fade-in${step.image ? ' process-step--has-image' : ''}${step.image && idx % 2 === 1 ? ' process-step--flip' : ''}`}>
                   <div className="process-step-body">
                     <p className="process-step-num">{step.num}</p>
                     <p className="process-step-title">{step.title}</p>
                     <p className="process-step-desc">{step.description}</p>
                   </div>
+                  {step.image && (
+                    <img src={step.image} alt={step.title} className="process-step-image" loading="lazy" />
+                  )}
                 </div>
               ))}
             </div>
@@ -176,12 +193,60 @@ export default function ProjectPage() {
           <div className="project-section fade-in">
             <p className="project-section-label">Designs</p>
             <div className="project-design-images">
-              {project.designImages.map((img, i) => (
-                <div key={i} className="project-design-image-block fade-in">
-                  <img src={img.src} alt={img.caption || project.title} loading="lazy" />
-                  {img.caption && <p className="project-image-caption">{img.caption}</p>}
+              {project.designImages.map((img, i) =>
+                img.link ? (
+                  <a
+                    key={i}
+                    href={img.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="project-design-image-block project-design-image-link fade-in"
+                  >
+                    <img src={img.src} alt={img.caption || project.title} loading="lazy" />
+                    {img.caption && <p className="project-image-caption">{img.caption}</p>}
+                  </a>
+                ) : (
+                  <div key={i} className="project-design-image-block fade-in">
+                    <img src={img.src} alt={img.caption || project.title} loading="lazy" />
+                    {img.caption && <p className="project-image-caption">{img.caption}</p>}
+                  </div>
+                )
+              )}
+            </div>
+          </div>
+        )}
+
+        {/* User Testing Results (Big Issue) */}
+        {project.userTesting && (
+          <div className="project-section fade-in">
+            <p className="project-section-label">User Testing</p>
+            <div className="user-testing-header">
+              <h2 className="user-testing-heading">{project.userTesting.heading}</h2>
+              <p className="user-testing-body">{project.userTesting.body}</p>
+            </div>
+            <div className="user-testing-grid">
+              <div className="user-testing-col">
+                <p className="user-testing-col-label user-testing-col-label--positive">Positive Feedback</p>
+                <div className="user-testing-items">
+                  {project.userTesting.positive.map((item) => (
+                    <div key={item.title} className="user-testing-item fade-in">
+                      <p className="user-testing-item-title">{item.title}</p>
+                      <p className="user-testing-item-body">{item.body}</p>
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
+              <div className="user-testing-col">
+                <p className="user-testing-col-label user-testing-col-label--improvement">Areas for Improvement</p>
+                <div className="user-testing-items">
+                  {project.userTesting.improvements.map((item) => (
+                    <div key={item.title} className="user-testing-item fade-in">
+                      <p className="user-testing-item-title">{item.title}</p>
+                      <p className="user-testing-item-body">{item.body}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         )}
@@ -245,7 +310,15 @@ export default function ProjectPage() {
                     <h3 className="feature-title">{feature.title}</h3>
                     <p className="feature-body">{feature.body}</p>
                   </div>
-                  {feature.link ? (
+                  {feature.images ? (
+                    <div className="feature-images-dual">
+                      {feature.images.map((img) => (
+                        <a key={img.src} href={img.link} target="_blank" rel="noopener noreferrer" className="feature-image-wrap">
+                          <img src={img.src} alt={img.alt || feature.title} loading="lazy" />
+                        </a>
+                      ))}
+                    </div>
+                  ) : feature.link ? (
                     <a href={feature.link} target="_blank" rel="noopener noreferrer" className="feature-image-wrap">
                       <img src={feature.image} alt={feature.imageAlt || feature.title} loading="lazy" />
                     </a>
@@ -261,7 +334,7 @@ export default function ProjectPage() {
         </div>
       )}
 
-      {/* ── PART 3: UI Principles (Big Issue) ── */}
+      {/* ── PART 3: UI Principles ── */}
       {project.uiPrinciples && (
         <div className="project-detail fade-in" style={{ marginTop: 0 }}>
           <div className="project-section" style={{ marginTop: 0 }}>
@@ -285,7 +358,52 @@ export default function ProjectPage() {
         </div>
       )}
 
-      {/* ── PART 4: Testimonials, outcome, reflection ── */}
+      {/* ── PART 4: Design System ── */}
+      {project.designSystem && (
+        <div className="project-detail fade-in" style={{ marginTop: 0 }}>
+          <div className="project-section">
+            <p className="project-section-label">{project.designSystem.label}</p>
+            <div className="design-system-header">
+              <h2 className="design-system-heading">{project.designSystem.heading}</h2>
+              {project.designSystem.subtext && (
+                <p className="design-system-subtext">{project.designSystem.subtext}</p>
+              )}
+            </div>
+            <div className="design-system-grid">
+              {project.designSystem.items.map((item, i) => (
+                <div key={i} className="design-system-item fade-in">
+                  <img src={item.image} alt={item.title} loading="lazy" />
+                  <p className="design-system-item-label">{item.title}</p>
+                  {item.body && <p className="design-system-item-body">{item.body}</p>}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ── PART 5: Developer Handoff ── */}
+      {project.devHandoff && (
+        <div className="project-detail fade-in" style={{ marginTop: 0 }}>
+          <div className="project-section">
+            <p className="project-section-label">{project.devHandoff.label}</p>
+            <div className="project-section-body" style={{ marginBottom: '32px' }}>
+              <h2 className="design-system-heading">{project.devHandoff.heading}</h2>
+              <p style={{ marginTop: '12px' }}>{project.devHandoff.body}</p>
+            </div>
+            <div className="dev-handoff-images">
+              {project.devHandoff.images.map((img, i) => (
+                <div key={i} className="project-design-image-block fade-in">
+                  <img src={img.src} alt={img.caption} loading="lazy" />
+                  {img.caption && <p className="project-image-caption">{img.caption}</p>}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ── PART 6: Testimonials, outcome, reflection ── */}
       <div className="project-detail">
 
         {/* Stakeholder feedback */}
@@ -307,10 +425,12 @@ export default function ProjectPage() {
         )}
 
         {/* Outcome */}
-        <div className="project-section fade-in">
-          <p className="project-section-label">{project.outcome.title}</p>
-          <div className="project-section-body"><p>{project.outcome.body}</p></div>
-        </div>
+        {project.outcome && (
+          <div className="project-section fade-in">
+            <p className="project-section-label">{project.outcome.title}</p>
+            <div className="project-section-body"><p>{project.outcome.body}</p></div>
+          </div>
+        )}
 
         {/* Reflection */}
         {project.reflection && (
@@ -320,7 +440,7 @@ export default function ProjectPage() {
           </div>
         )}
 
-        {/* Prominent deliverables (large cards at the bottom) */}
+        {/* Prominent deliverables */}
         {project.projectLinks && project.projectLinks.length > 0 && (
           <div className="project-section fade-in" style={{ marginBottom: '0' }}>
             <p className="project-section-label">View the Work</p>
@@ -360,4 +480,11 @@ export default function ProjectPage() {
       <Footer />
     </>
   );
+}
+
+/** Returns a bento span class based on image index and total count */
+function bentoSpan(index, total) {
+  // Pattern: wide, narrow, narrow, full, wide, narrow, narrow, full...
+  const pattern = ['wide', 'narrow', 'full', 'narrow', 'wide'];
+  return pattern[index % pattern.length];
 }

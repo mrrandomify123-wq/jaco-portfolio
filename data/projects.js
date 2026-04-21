@@ -55,7 +55,7 @@ export const architectureProjects = [
     title: 'Porsche Australia Office Refurbishment',
     date: 'Completed 2023',
     tags: ['Concept Design', 'Construction Documentation'],
-    image: 'https://cdn.prod.website-files.com/65e6a01f2073c7705362cda6/664c2881f20d14f69f91b89c_PCA_Office_003_HR_lo.jpg',
+    image: '/images/architecture/pca-refurb/img-01.jpg',
     href: '/work/pca-refurb',
   },
   {
@@ -63,8 +63,32 @@ export const architectureProjects = [
     title: 'Porsche Center Adelaide and BMW Medindie',
     date: 'Completed 2024',
     tags: ['Concept Design', 'Construction Documentation'],
-    image: 'https://cdn.prod.website-files.com/65e6a01f2073c7705362cda6/664c294d36cf815452a745e3_1300x735px_porsche-001.jpg',
+    image: '/images/architecture/pca-adelaide/img-01.jpg',
     href: '/work/pca-adelaide',
+  },
+  {
+    id: 'pc-melbourne',
+    title: 'Porsche Center Melbourne',
+    date: 'Under construction',
+    tags: ['Concept Design'],
+    image: '/images/architecture/pc-melbourne/img-01.jpg',
+    href: '/work/pc-melbourne',
+  },
+  {
+    id: 'kia',
+    title: 'Adrian Brian Kia Medindie',
+    date: 'Completed 2023',
+    tags: ['Concept Design', 'Construction Documentation'],
+    image: '/images/architecture/kia/exterior.jpg',
+    href: '/work/kia',
+  },
+  {
+    id: 'williams',
+    title: 'Williams Residence',
+    date: 'Completed 2022',
+    tags: ['Concept Design', 'Construction Documentation'],
+    image: '/images/architecture/williams/exterior.jpg',
+    href: '/work/williams',
   },
   {
     id: 'truck-storage',
@@ -73,14 +97,6 @@ export const architectureProjects = [
     tags: ['Concept Design', 'Construction Documentation'],
     image: 'https://cdn.prod.website-files.com/65e6a01f2073c7705362cda6/664c30454d0e8083c081c6dd_Nuriootpa%20Traders%20Site%20Render.jpg',
     href: '/work/truck-storage',
-  },
-  {
-    id: 'pc-melbourne',
-    title: 'Porsche Center Melbourne',
-    date: 'Under construction',
-    tags: ['Concept Design'],
-    image: 'https://cdn.prod.website-files.com/65e6a01f2073c7705362cda6/664ea4d7f43a8a93cf317f3d_Exterior%20v2%20no%20logo.jpg',
-    href: '/work/pc-melbourne',
   },
 ];
 
@@ -170,7 +186,11 @@ export const caseStudies = {
     processNote: 'We followed a Human Centered Design (HCD) methodology throughout, returning to users at each stage to validate assumptions before progressing.',
     designImages: [
       { src: '/images/starlight/journey-map.png', caption: 'Journey map: consolidated from stakeholder and user interviews' },
-      { src: '/images/starlight/prototype.png', caption: 'Hi-fi prototype: full interactive mobile experience' },
+      {
+        src: '/images/starlight/prototype.png',
+        caption: 'Hi-fi prototype: full interactive mobile experience',
+        link: 'https://www.figma.com/proto/lEtsIdnSO4sZcHOynEYsGA/Starlight-Project-File?page-id=209%3A2386&type=design&node-id=209-2461&viewport=4305%2C270%2C0.35&t=1qsDuzJ5xSM03ff1-1&scaling=scale-down&starting-point-node-id=209%3A2461&mode=design',
+      },
     ],
     finalImage: null,
     features: [
@@ -178,8 +198,8 @@ export const caseStudies = {
         num: 'Key Feature 01',
         title: 'Inviting users to scroll and learn more.',
         body: "We designed the mobile website with visually appealing elements and interactive features that invited users to scroll and learn more about Starlight. By incorporating captivating imagery, compelling storytelling, and clear calls-to-action, we created a seamless narrative that guided users through Starlight's mission and impact.",
-        image: '/images/starlight/prototype.png',
-        imageAlt: 'Starlight hi-fi prototype — click to open in Figma',
+        image: '/images/starlight/final-deck-3.png',
+        imageAlt: 'Starlight final design — full presentation overview',
         link: 'https://www.figma.com/proto/lEtsIdnSO4sZcHOynEYsGA/Starlight-Project-File?page-id=209%3A2386&type=design&node-id=209-2461&viewport=4305%2C270%2C0.35&t=1qsDuzJ5xSM03ff1-1&scaling=scale-down&starting-point-node-id=209%3A2461&mode=design',
         linkLabel: 'View Prototype',
       },
@@ -194,10 +214,32 @@ export const caseStudies = {
         num: 'Key Feature 03',
         title: 'Playful and engaging design.',
         body: "We focused on creating a playful design system that maintained the Starlight aesthetic while clearly communicating system status through interactions. By integrating dynamic and engaging visual elements, we ensured that the design was both fun and functional. Interactive feedback such as animations and visual cues provided users with real-time responses to their actions.",
-        image: '/images/starlight/final-3.png',
-        imageAlt: 'Starlight design system and interactions',
+        image: '/images/starlight/prototype-animation.gif',
+        imageAlt: 'Starlight animated interactions and design system',
       },
     ],
+    designSystem: {
+      label: 'Design System',
+      heading: 'A playful system built for clarity and accessibility.',
+      subtext: 'Every component was designed to align with the Starlight brand while maintaining accessibility standards and mobile-first usability.',
+      items: [
+        {
+          image: '/images/starlight/ds-textfields.png',
+          title: 'Form Components',
+          body: 'Accessible input fields and form elements designed for ease of use across all device sizes.',
+        },
+        {
+          image: '/images/starlight/ds-frame-1.jpg',
+          title: 'Visual Language',
+          body: 'Typography, colour, and spacing decisions grounded in the Starlight brand palette and accessibility guidelines.',
+        },
+        {
+          image: '/images/starlight/ds-frame-2.jpg',
+          title: 'UI Patterns',
+          body: 'Reusable UI patterns and interaction states that maintain consistency across the entire donation flow.',
+        },
+      ],
+    },
     testimonials: [
       {
         quote: "I really liked your donation process and how streamlined it was. I also appreciated your language, especially the 'I want to give' statement. I thought it was a powerful yet simple statement to have on a donation form.",
@@ -284,28 +326,60 @@ export const caseStudies = {
     processNote: 'The dual-interface challenge required constantly asking: is this the same problem, or two different problems that share data? Getting that distinction right shaped every design decision.',
     designImages: [
       { src: '/images/big-issue/flow-teacher.png', caption: 'Teacher user flow: from login through to excursion management' },
-      { src: '/images/big-issue/prototype-teacher.png', caption: 'Hi-fi prototype: teacher dashboard and booking view' },
-      { src: '/images/big-issue/prototype-admin.png', caption: 'Hi-fi prototype: admin coordinator interface' },
+      {
+        src: '/images/big-issue/prototype-teacher.png',
+        caption: 'Hi-fi prototype: teacher dashboard and booking view',
+        link: 'https://www.figma.com/proto/yNVHfgwhz7mSOy9I4ynAH4/The-Big-Issue-Project-File?node-id=334-29284&viewport=1168%2C511%2C0.06&t=mboqaqkaI9VGR6o2-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=334%3A29284&show-proto-sidebar=1',
+      },
+      {
+        src: '/images/big-issue/prototype-admin.png',
+        caption: 'Hi-fi prototype: admin coordinator interface',
+        link: 'https://www.figma.com/proto/yNVHfgwhz7mSOy9I4ynAH4/The-Big-Issue-Project-File?node-id=473-31255&viewport=1168%2C511%2C0.06&t=mboqaqkaI9VGR6o2-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=473%3A31255&show-proto-sidebar=1',
+      },
     ],
     finalImage: null,
+    userTesting: {
+      heading: 'We asked users to find out more information about a booking and to locate a document.',
+      body: 'I conducted 5 different user tests to get feedback on the portal design. Although our participants were not teachers, they provided us with a range of different levels of technological literacy that applies to our range of target users.',
+      positive: [
+        {
+          title: 'Easy to Use Navigation',
+          body: 'Participants found the navigation straightforward and intuitive, allowing them to move seamlessly through the portal without confusion.',
+        },
+        {
+          title: 'Clean and Minimalistic Aesthetic',
+          body: 'The clean and minimalistic design of the portal was praised for making the interface visually appealing and less cluttered.',
+        },
+        {
+          title: 'Clear Organization of Resources',
+          body: 'Participants found it easy to locate and access educational materials and other resources, which saved them valuable time.',
+        },
+      ],
+      improvements: [
+        {
+          title: 'Initial Overwhelm',
+          body: 'Some participants felt a bit overwhelmed when first using the portal. To address this, we added an onboarding process to guide new users through the main features and functionalities, helping them get started more comfortably.',
+        },
+        {
+          title: 'Colour Coding',
+          body: 'Feedback indicated that adding colour coding could help users quickly identify different bookings and statuses at a glance. We incorporated a colour-coded system to enhance visual clarity and improve the overall user experience.',
+        },
+      ],
+    },
     features: [
       {
         num: 'Key Feature 01',
         title: 'Centralised Resources Hub.',
         body: 'The Centralised Resource Hub provides easy access to all essential planning materials, including risk assessments and educational resources. This ensures that teachers have everything they need in one place, making the excursion planning process more efficient and less time-consuming.',
-        image: '/images/big-issue/prototype-teacher.png',
-        imageAlt: 'Big Issue teacher flow prototype — click to open in Figma',
-        link: 'https://www.figma.com/proto/yNVHfgwhz7mSOy9I4ynAH4/The-Big-Issue-Project-File?node-id=334-29284&viewport=1168%2C511%2C0.06&t=mboqaqkaI9VGR6o2-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=334%3A29284&show-proto-sidebar=1',
-        linkLabel: 'View Teacher Prototype',
+        image: '/images/big-issue/resources-card.png',
+        imageAlt: 'Big Issue centralised resources hub',
       },
       {
         num: 'Key Feature 02',
-        title: 'Booking Management.',
-        body: 'Booking Management simplifies the scheduling and organising of excursions. Teachers can easily view, modify, and confirm their bookings. This feature streamlines the administrative tasks associated with planning an excursion, with colour-coded status indicators for at-a-glance clarity.',
-        image: '/images/big-issue/prototype-admin.png',
-        imageAlt: 'Big Issue admin flow prototype — click to open in Figma',
-        link: 'https://www.figma.com/proto/yNVHfgwhz7mSOy9I4ynAH4/The-Big-Issue-Project-File?node-id=473-31255&viewport=1168%2C511%2C0.06&t=mboqaqkaI9VGR6o2-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=473%3A31255&show-proto-sidebar=1',
-        linkLabel: 'View Admin Prototype',
+        title: 'Streamlined booking and calendar management.',
+        body: 'Teachers can view, create, and manage excursion bookings from a single list view. Colour-coded status indicators make it immediately clear which bookings are confirmed, pending, or require action — reducing administrative back-and-forth significantly.',
+        image: '/images/big-issue/bookings-list.png',
+        imageAlt: 'Big Issue bookings list view',
       },
       {
         num: 'Key Feature 03',
@@ -321,20 +395,42 @@ export const caseStudies = {
       subtext: "We used a clean and modern aesthetic that aligned with The Big Issue's branding, ensuring that the portal was visually appealing and easy to use.",
       items: [
         {
-          image: '/images/big-issue/dashboard.png',
+          image: '/images/big-issue/ease-of-use.png',
           title: 'Ease of Use',
           body: 'The interface is intuitive and user-friendly, allowing teachers to navigate effortlessly through planning, booking, and managing excursions without unnecessary complexity.',
         },
         {
-          image: '/images/big-issue/prototype-teacher.png',
+          image: '/images/big-issue/clarity.png',
           title: 'Clarity',
           body: 'Clear and concise information presentation helps teachers quickly find and understand the resources and tools they need, minimising confusion and enhancing usability.',
         },
         {
-          image: '/images/big-issue/prototype-admin.png',
+          image: '/images/big-issue/efficiency.png',
           title: 'Efficiency',
           body: 'The portal streamlines administrative tasks, providing quick access to essential tools and resources, saving teachers valuable time and reducing effort.',
         },
+      ],
+    },
+    designSystem: {
+      label: 'Design System',
+      heading: 'A component library built for scale and consistency.',
+      subtext: "Every UI element — from buttons to status badges — was designed as a reusable component, ensuring consistency across both the teacher and admin interfaces.",
+      items: [
+        { image: '/images/big-issue/design-system/buttons.png', title: 'Buttons' },
+        { image: '/images/big-issue/design-system/navigation.png', title: 'Navigation' },
+        { image: '/images/big-issue/design-system/forms.png', title: 'Forms' },
+        { image: '/images/big-issue/design-system/cards.png', title: 'Cards' },
+        { image: '/images/big-issue/design-system/status.png', title: 'Status Indicators' },
+        { image: '/images/big-issue/design-system/dialogue.png', title: 'Dialogue & Modals' },
+      ],
+    },
+    devHandoff: {
+      label: 'Developer Handoff',
+      heading: 'Annotated specs for both interfaces.',
+      body: 'Each prototype screen was annotated with spacing, typography, component states, and interaction notes to ensure accurate implementation without ambiguity.',
+      images: [
+        { src: '/images/big-issue/dev-handoff-teacher.png', caption: 'Teacher interface — annotated prototype specs' },
+        { src: '/images/big-issue/dev-handoff-admin.png', caption: 'Admin interface — annotated prototype specs' },
       ],
     },
     testimonials: [
@@ -487,13 +583,14 @@ export const caseStudies = {
     next: { id: 'starlight', title: "Starlight Children's Foundation" },
   },
 
-  // Architecture case studies
+  // ── Architecture case studies ──────────────────────────────
+
   'pca-refurb': {
     title: 'Porsche Australia Office Refurbishment',
     category: 'Architecture',
     date: 'Completed 2023',
     tags: ['Concept Design', 'Construction Documentation'],
-    heroImage: 'https://cdn.prod.website-files.com/65e6a01f2073c7705362cda6/664c2881f20d14f69f91b89c_PCA_Office_003_HR_lo.jpg',
+    heroImage: '/images/architecture/pca-refurb/img-01.jpg',
     overview:
       "Interior refurbishment of the Porsche Cars Australia national headquarters in Melbourne. The project involved redesigning the open-plan workspace, executive meeting suites, and staff amenities to align with Porsche's updated global design language.",
     role: 'Architectural Designer',
@@ -504,24 +601,22 @@ export const caseStudies = {
       title: 'The Brief',
       body: [
         "Porsche Cars Australia required a refurbishment of their national HQ that reflected the brand's premium positioning while improving day-to-day working conditions for staff. The existing office felt dated and disconnected from the quality of the product the business sold.",
-        "The challenge was balancing brand consistency (adhering to Porsche's global design standards) with practical workplace functionality and the constraints of an existing building.",
       ],
-      insight: "Brand and function are not in tension. When the design is right, the space communicates the brand simply by working well.",
     },
-    process: [
-      { num: '01', title: 'Concept Design', description: 'Developed concept directions aligned with Porsche global brand guidelines, presenting options to local and international stakeholders.', image: null },
-      { num: '02', title: 'Design Development', description: 'Refined the selected concept through material selection, spatial planning, and coordination with specialist subcontractors.', image: null },
-      { num: '03', title: 'Documentation', description: 'Produced full construction documentation packages for building permit and contractor tender.', image: null },
-      { num: '04', title: 'Construction', description: 'Provided construction observation services and coordinated responses to RFIs throughout the build phase.', image: null },
+    galleryImages: [
+      '/images/architecture/pca-refurb/img-01.jpg',
+      '/images/architecture/pca-refurb/img-02.jpg',
+      '/images/architecture/pca-refurb/img-03.jpg',
+      '/images/architecture/pca-refurb/img-04.jpg',
+      '/images/architecture/pca-refurb/img-05.jpg',
+      '/images/architecture/pca-refurb/img-06.jpg',
+      '/images/architecture/pca-refurb/img-07.jpg',
+      '/images/architecture/pca-refurb/img-08.jpg',
     ],
-    processNote: null,
-    designImages: [],
-    finalImage: null,
     outcome: {
       title: 'Outcome',
       body: "The refurbishment was completed on schedule and received positive feedback from Porsche AG during a regional review. The project demonstrated my ability to work within strict brand frameworks while delivering a space that functioned well for its occupants.",
     },
-    reflection: "Working within a global brand system taught me how to find creative solutions within constraints, a skill that translates directly into design systems work in product design.",
     next: { id: 'pca-adelaide', title: 'Porsche Center Adelaide and BMW Medindie' },
   },
 
@@ -530,7 +625,7 @@ export const caseStudies = {
     category: 'Architecture',
     date: 'Completed 2024',
     tags: ['Concept Design', 'Construction Documentation'],
-    heroImage: 'https://cdn.prod.website-files.com/65e6a01f2073c7705362cda6/664c294d36cf815452a745e3_1300x735px_porsche-001.jpg',
+    heroImage: '/images/architecture/pca-adelaide/img-01.jpg',
     overview:
       "Concept design and documentation for two concurrent premium automotive dealership projects in Adelaide: a Porsche Center and BMW dealership, both requiring compliance with their respective manufacturer design standards.",
     role: 'Architectural Designer',
@@ -540,24 +635,118 @@ export const caseStudies = {
     problem: {
       title: 'The Brief',
       body: [
-        "Automotive dealerships are among the most brand-controlled built environments. Every surface, material, and spatial proportion is governed by manufacturer standards. The challenge was to meet those standards across two different brands simultaneously, within the constraints of local planning requirements and client budget.",
-        "Both projects required close collaboration with the manufacturer CI teams in Germany and the UK, requiring clear communication and careful documentation management.",
+        "Automotive dealerships are among the most brand-controlled built environments. The challenge was to meet those standards across two different brands simultaneously, within the constraints of local planning requirements and client budget.",
       ],
-      insight: "Managing two brand systems in parallel clarified something: good constraints produce better outcomes when you understand the why behind each rule.",
     },
-    process: [
-      { num: '01', title: 'CI Compliance', description: "Mapped both brands' Corporate Identity requirements and identified conflicts with local planning codes, resolving each through negotiation with manufacturers.", image: null },
-      { num: '02', title: 'Concept Design', description: 'Developed site-specific concept designs for each project, adapting global templates to local site conditions.', image: null },
-      { num: '03', title: 'Documentation', description: 'Produced permit and construction documentation packages for both projects, managing the coordination between local consultants and international brand teams.', image: null },
+    galleryImages: [
+      '/images/architecture/pca-adelaide/img-01.jpg',
+      '/images/architecture/pca-adelaide/img-02.jpg',
+      '/images/architecture/pca-adelaide/img-03.jpg',
+      '/images/architecture/pca-adelaide/img-04.jpg',
+      '/images/architecture/pca-adelaide/img-05.jpg',
+      '/images/architecture/pca-adelaide/img-06.jpg',
+      '/images/architecture/pca-adelaide/img-07.jpg',
+      '/images/architecture/pca-adelaide/img-08.jpg',
+      '/images/architecture/pca-adelaide/img-09.jpg',
     ],
-    processNote: null,
-    designImages: [],
-    finalImage: null,
     outcome: {
       title: 'Outcome',
       body: "Both projects received manufacturer CI approval and building permits. The Porsche Center Adelaide was completed in early 2024. The BMW Medindie project progressed to construction during the same period.",
     },
-    reflection: "Running two complex projects in parallel required the kind of systematic thinking and documentation discipline that I now bring to design work: clear naming conventions, version control, and stakeholder communication.",
+    next: { id: 'pc-melbourne', title: 'Porsche Center Melbourne' },
+  },
+
+  'pc-melbourne': {
+    title: 'Porsche Center Melbourne',
+    category: 'Architecture',
+    date: 'Under construction',
+    tags: ['Concept Design'],
+    heroImage: '/images/architecture/pc-melbourne/img-01.jpg',
+    overview:
+      "Concept design for a new flagship Porsche Center in Melbourne, one of the brand's most visible Australian locations and a key project in their national network expansion.",
+    role: 'Architectural Designer',
+    timeline: 'Ongoing',
+    tools: 'Revit, SketchUp, Lumion',
+    type: 'Commercial Architecture',
+    problem: {
+      title: 'The Brief',
+      body: [
+        "Porsche's Melbourne flagship required a design that could serve as a landmark for the brand — a showroom experience that matched the emotional quality of the cars themselves. The brief called for a design that went beyond CI compliance to create a genuinely differentiated customer experience.",
+      ],
+    },
+    galleryImages: [
+      '/images/architecture/pc-melbourne/img-01.jpg',
+      '/images/architecture/pc-melbourne/img-02.jpg',
+      '/images/architecture/pc-melbourne/img-03.jpg',
+      '/images/architecture/pc-melbourne/img-04.jpg',
+      '/images/architecture/pc-melbourne/img-05.jpg',
+      '/images/architecture/pc-melbourne/img-06.jpg',
+    ],
+    outcome: {
+      title: 'Outcome',
+      body: "The concept design received approval from Porsche AG and the project has progressed to construction documentation. The facade design was cited by the client as the strongest aspect of the scheme.",
+    },
+    next: { id: 'kia', title: 'Adrian Brian Kia Medindie' },
+  },
+
+  'kia': {
+    title: 'Adrian Brian Kia Medindie',
+    category: 'Architecture',
+    date: 'Completed 2023',
+    tags: ['Concept Design', 'Construction Documentation'],
+    heroImage: '/images/architecture/kia/exterior.jpg',
+    overview:
+      "Design and documentation for a premium Kia dealership in Medindie, South Australia. The project delivered a multi-brand automotive facility accommodating showroom, service, and retail functions across a constrained urban site.",
+    role: 'Architectural Designer',
+    timeline: '10 months',
+    tools: 'Revit, AutoCAD, Lumion',
+    type: 'Commercial Architecture',
+    problem: {
+      title: 'The Brief',
+      body: [
+        "The client required a facility that balanced the Kia brand identity with a multi-brand service offering, all within a tight urban site footprint. The design had to create a premium customer experience from the street while maintaining operational efficiency for the service team.",
+      ],
+    },
+    galleryImages: [
+      '/images/architecture/kia/exterior.jpg',
+      '/images/architecture/kia/showroom.jpg',
+      '/images/architecture/kia/car-display.jpg',
+      '/images/architecture/kia/bar.jpg',
+      '/images/architecture/kia/multi-brand.jpg',
+    ],
+    outcome: {
+      title: 'Outcome',
+      body: "The completed dealership met all Kia CI requirements and opened to positive reception. The multi-brand service workshop layout was identified by the client as a key operational improvement over their previous facility.",
+    },
+    next: { id: 'williams', title: 'Williams Residence' },
+  },
+
+  'williams': {
+    title: 'Williams Residence',
+    category: 'Architecture',
+    date: 'Completed 2022',
+    tags: ['Concept Design', 'Construction Documentation'],
+    heroImage: '/images/architecture/williams/exterior.jpg',
+    overview:
+      "Residential design for a private dwelling in South Australia, delivering a considered response to the site's landscape and orientation. The project involved full concept design and construction documentation.",
+    role: 'Architectural Designer',
+    timeline: '12 months',
+    tools: 'Revit, AutoCAD, SketchUp',
+    type: 'Residential Architecture',
+    problem: {
+      title: 'The Brief',
+      body: [
+        "The clients sought a home that felt connected to its landscape, with generous natural light and a clear relationship between indoor and outdoor living. The design needed to respond to the site's topography and orientation while meeting the practical needs of a family home.",
+      ],
+    },
+    galleryImages: [
+      '/images/architecture/williams/exterior.jpg',
+      '/images/architecture/williams/interior.jpg',
+    ],
+    outcome: {
+      title: 'Outcome',
+      body: "The completed residence was well-received by the clients. The orientation strategy maximised natural light year-round, and the indoor-outdoor connection was cited as the standout feature of the design.",
+    },
     next: { id: 'truck-storage', title: 'Truck and Storage Complex' },
   },
 
@@ -577,59 +766,13 @@ export const caseStudies = {
       title: 'The Brief',
       body: [
         "The client required a purpose-built facility that could accommodate heavy vehicle servicing, long-term truck storage, and ancillary office functions on a constrained rural site. The primary challenge was designing for operational workflow: how trucks move through the site, how the servicing bay connects to storage, and how staff and vehicles are separated for safety.",
-        "The remote site location added complexity to material procurement and construction sequencing.",
       ],
-      insight: "Industrial design is pure UX for physical space. If the workflow doesn't work, nothing else matters.",
     },
-    process: [
-      { num: '01', title: 'Site Analysis', description: 'Assessed site constraints including access roads, flood risk zones, and utility connections to inform building placement and orientation.', image: null },
-      { num: '02', title: 'Operational Design', description: 'Worked with the client to map vehicle movement patterns and servicing workflows, using this as the basis for the spatial organisation.', image: null },
-      { num: '03', title: 'Documentation', description: 'Produced full construction documentation including structural coordination with engineers and authority submissions.', image: null },
-    ],
-    processNote: null,
-    designImages: [],
-    finalImage: null,
+    galleryImages: [],
     outcome: {
       title: 'Outcome',
       body: "The project received development approval and commenced construction. The operational workflow design was validated by the client's operations manager as a significant improvement over their existing facility.",
     },
-    reflection: "Designing for operational efficiency in an industrial context is fundamentally the same problem as designing for task completion in a digital product. Understand the job to be done, then get out of the way.",
-    next: { id: 'pc-melbourne', title: 'Porsche Center Melbourne' },
-  },
-
-  'pc-melbourne': {
-    title: 'Porsche Center Melbourne',
-    category: 'Architecture',
-    date: 'Under construction',
-    tags: ['Concept Design'],
-    heroImage: 'https://cdn.prod.website-files.com/65e6a01f2073c7705362cda6/664ea4d7f43a8a93cf317f3d_Exterior%20v2%20no%20logo.jpg',
-    overview:
-      "Concept design for a new flagship Porsche Center in Melbourne, one of the brand's most visible Australian locations and a key project in their national network expansion.",
-    role: 'Architectural Designer',
-    timeline: 'Ongoing',
-    tools: 'Revit, SketchUp, Lumion',
-    type: 'Commercial Architecture',
-    problem: {
-      title: 'The Brief',
-      body: [
-        "Porsche's Melbourne flagship required a design that could serve as a landmark for the brand, a showroom experience that matched the emotional quality of the cars themselves. The brief called for a design that went beyond CI compliance to create a genuinely differentiated customer experience.",
-        "The site's visibility from a major arterial road made facade design a key consideration, while internal planning needed to balance showroom display, service workshop, parts storage, and customer lounge functions.",
-      ],
-      insight: "A premium brand showroom is a physical UX. The customer journey through the space is as deliberate as any digital flow.",
-    },
-    process: [
-      { num: '01', title: 'Concept Design', description: "Developed multiple concept directions exploring the tension between Porsche's precision engineering and the sensory quality of the customer experience.", image: null },
-      { num: '02', title: 'Facade Design', description: 'Designed the main street facade to function as a display surface, showcasing vehicles to passing traffic while maintaining the quality and restraint of the Porsche brand.', image: null },
-      { num: '03', title: 'Interior Planning', description: 'Developed the interior spatial sequence from arrival through showroom to customer lounge, optimising both customer experience and operational efficiency.', image: null },
-    ],
-    processNote: null,
-    designImages: [],
-    finalImage: null,
-    outcome: {
-      title: 'Outcome',
-      body: "The concept design received approval from Porsche AG and the project has progressed to construction documentation. The facade design was cited by the client as the strongest aspect of the scheme.",
-    },
-    reflection: "This project crystallised the connection between architecture and product design for me. The showroom experience, the sequence of spaces, the way light falls on a car, the moment of arrival, is a designed journey. Thinking about physical experience design was the foundation for how I now think about digital experience design.",
     next: { id: 'starlight', title: "Starlight Children's Foundation" },
   },
 };
