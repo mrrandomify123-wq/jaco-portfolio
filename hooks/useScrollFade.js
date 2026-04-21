@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-export function useScrollFade() {
+export function useScrollFade(key) {
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -17,5 +17,6 @@ export function useScrollFade() {
     elements.forEach((el) => observer.observe(el));
 
     return () => observer.disconnect();
-  }, []);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [key]);
 }

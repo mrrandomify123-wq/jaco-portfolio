@@ -84,7 +84,7 @@ export default function ProjectPage() {
   const openLightbox = useCallback((src) => setLightboxSrc(src), []);
   const closeLightbox = useCallback(() => setLightboxSrc(null), []);
 
-  useScrollFade();
+  useScrollFade(slug);
 
   if (!slug) return null;
   const project = caseStudies[slug];
@@ -227,24 +227,6 @@ export default function ProjectPage() {
                   </div>
                 ))}
               </div>
-            </div>
-          </div>
-        )}
-
-        {/* Architecture bento gallery */}
-        {isArch && bentoImages.length > 0 && (
-          <div className="project-section fade-in">
-            <p className="project-section-label">Project Images</p>
-            <div className="arch-bento" key={`bento-${slug}`}>
-              {bentoImages.map((src, i) => (
-                <div
-                  key={src}
-                  className={`arch-bento-item fade-in arch-bento-item--${bentoSpan(i, bentoImages.length)} zoomable`}
-                  onClick={() => openLightbox(src)}
-                >
-                  <img src={src} alt={`${project.title} — image ${i + 1}`} loading={i < 4 ? 'eager' : 'lazy'} />
-                </div>
-              ))}
             </div>
           </div>
         )}
@@ -408,6 +390,26 @@ export default function ProjectPage() {
         )}
 
       </div>{/* end project-detail */}
+
+      {/* ── ARCHITECTURE BENTO — wide section outside constrained column ── */}
+      {isArch && bentoImages.length > 0 && (
+        <div className="project-bento-section fade-in">
+          <div className="project-bento-inner">
+            <p className="project-section-label">Project Images</p>
+            <div className="arch-bento" key={`bento-${slug}`}>
+              {bentoImages.map((src, i) => (
+                <div
+                  key={src}
+                  className={`arch-bento-item fade-in arch-bento-item--${bentoSpan(i, bentoImages.length)} zoomable`}
+                  onClick={() => openLightbox(src)}
+                >
+                  <img src={src} alt={`${project.title} — image ${i + 1}`} loading={i < 4 ? 'eager' : 'lazy'} />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* ── KEY FEATURES — alternating wide layout ── */}
       {project.features && project.features.length > 0 && (

@@ -443,8 +443,6 @@ export const caseStudies = {
       body: 'Each prototype screen was annotated with spacing, typography, component states, and interaction notes to ensure accurate implementation without ambiguity.',
       images: [
         { src: '/images/big-issue/design-system/dashboard.png', caption: 'Dashboard overview — layout and component specifications' },
-        { src: '/images/big-issue/dev-handoff-teacher.png', caption: 'Teacher interface — annotated prototype specs' },
-        { src: '/images/big-issue/dev-handoff-admin.png', caption: 'Admin interface — annotated prototype specs' },
       ],
     },
     testimonials: [

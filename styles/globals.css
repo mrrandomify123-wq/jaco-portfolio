@@ -1088,7 +1088,7 @@ img {
 }
 
 .project-overview-value {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--text);
   font-weight: 500;
   line-height: 1.4;
@@ -1125,7 +1125,6 @@ img {
   color: var(--text-muted);
   line-height: 1.85;
   font-weight: 400;
-  max-width: 680px;
 }
 
 .project-section-body p {
@@ -1227,7 +1226,7 @@ img {
 }
 
 .feature-body {
-  font-size: 15px;
+  font-size: 16px;
   color: var(--text-muted);
   line-height: 1.8;
   margin-bottom: 24px;
@@ -1375,7 +1374,7 @@ a.feature-image-wrap:hover::after {
 }
 
 .ui-principle-body {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--text-muted);
   line-height: 1.75;
 }
@@ -1418,7 +1417,7 @@ a.feature-image-wrap:hover::after {
 }
 
 .project-insight-card-body {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--text-muted);
   line-height: 1.7;
 }
@@ -1463,7 +1462,7 @@ a.feature-image-wrap:hover::after {
 }
 
 .project-recommendation-body {
-  font-size: 14px;
+  font-size: 15px;
   color: var(--text-muted);
   line-height: 1.75;
 }
@@ -1754,10 +1753,9 @@ a.feature-image-wrap:hover::after {
 }
 
 .process-step-desc {
-  font-size: 14px;
+  font-size: 15px;
   color: var(--text-muted);
   line-height: 1.75;
-  max-width: 640px;
 }
 
 /* Design images — full-width stacked with caption */
@@ -2074,7 +2072,7 @@ a.project-design-image-link:hover::after {
 }
 
 .user-testing-item-body {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--text-muted);
   line-height: 1.75;
 }
@@ -2130,7 +2128,7 @@ a.project-design-image-link:hover::after {
 }
 
 .design-system-item-body {
-  font-size: 12px;
+  font-size: 13px;
   color: var(--text-muted);
   line-height: 1.65;
 }
@@ -2280,7 +2278,7 @@ a.project-design-image-link:hover::after {
 }
 
 .split-right-item-body {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--text-muted);
   line-height: 1.75;
 }
@@ -2416,6 +2414,21 @@ a.project-design-image-link:hover::after {
 
 .design-system-carousel-item:hover img {
   opacity: 0.9;
+}
+
+/* ===== ARCHITECTURE BENTO — wide full-bleed section ===== */
+.project-bento-section {
+  border-top: 1px solid var(--border);
+  margin-top: 64px;
+  padding-top: 56px;
+  padding-bottom: 0;
+}
+
+.project-bento-inner {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 48px;
 }
 
 /* ===== ARCHITECTURE BENTO GALLERY ===== */
@@ -2575,6 +2588,12 @@ a.project-design-image-link:hover::after {
   }
 }
 
+@media (max-width: 900px) {
+  .project-bento-inner {
+    padding: 0 32px;
+  }
+}
+
 @media (max-width: 768px) {
   .sidebar {
     width: 100%;
@@ -2715,5 +2734,37 @@ a.project-design-image-link:hover::after {
 
   .project-next {
     padding: 56px 24px 40px;
+  }
+
+  .project-features-inner {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .project-bento-section {
+    margin-top: 48px;
+    padding-top: 40px;
+  }
+
+  .project-bento-inner {
+    padding: 0 24px;
+  }
+
+  .feature-item {
+    padding: 40px 0;
+    gap: 24px;
+  }
+
+  .project-overview {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .user-testing-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .split-section {
+    gap: 28px;
   }
 }
