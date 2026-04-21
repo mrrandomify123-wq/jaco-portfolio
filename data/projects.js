@@ -63,7 +63,7 @@ export const architectureProjects = [
     title: 'Porsche Center Adelaide and BMW Medindie',
     date: 'Completed 2024',
     tags: ['Concept Design', 'Construction Documentation'],
-    image: '/images/architecture/pca-adelaide/img-01.jpg',
+    image: '/images/architecture/pca-adelaide/img-04.jpg',
     href: '/work/pca-adelaide',
   },
   {
@@ -137,6 +137,9 @@ export const sideProjects = [
 // PROJECT CASE STUDIES (detail pages)
 // ============================================================
 export const caseStudies = {
+
+  // ── UX Case Studies ─────────────────────────────────────────
+
   starlight: {
     title: "Starlight Children's Foundation",
     category: 'UX / Product Design',
@@ -159,25 +162,21 @@ export const caseStudies = {
     },
     process: [
       {
-        num: '01',
         title: 'Discovery and Stakeholder Interviews',
         description: 'Conducted stakeholder interviews with Starlight coordinators and ran a contextual review of the existing donation experience. Mapped pain points across the full donor journey.',
         image: '/images/starlight/research-1.jpg',
       },
       {
-        num: '02',
         title: 'User Research and Persona',
         description: 'Synthesised interview findings into a user persona and consolidated journey map. Six key research insights emerged covering shared values, transparency, design credibility, impact clarity, navigation confidence, and data visualisation.',
         image: '/images/starlight/persona.jpg',
       },
       {
-        num: '03',
         title: 'Ideation with SCAMPER',
         description: 'Used the SCAMPER method to systematically evaluate the current website experience and identify what worked and what needed to change. Developed initial sketches incorporating all research findings.',
         image: '/images/starlight/research-2.jpg',
       },
       {
-        num: '04',
         title: 'Wireframes and User Testing',
         description: 'Developed wireframes for a minimalist homepage design that invited users to scroll and explore. Tested with 7 participants. Positive feedback: credible organisation, digestible information. Areas improved: donation descriptions, payment frequency options.',
         image: '/images/starlight/wireframes.png',
@@ -185,37 +184,33 @@ export const caseStudies = {
     ],
     processNote: 'We followed a Human Centered Design (HCD) methodology throughout, returning to users at each stage to validate assumptions before progressing.',
     designImages: [
-      { src: '/images/starlight/journey-map.png', caption: 'Journey map: consolidated from stakeholder and user interviews' },
       {
         src: '/images/starlight/prototype.png',
         caption: 'Hi-fi prototype: full interactive mobile experience',
         link: 'https://www.figma.com/proto/lEtsIdnSO4sZcHOynEYsGA/Starlight-Project-File?page-id=209%3A2386&type=design&node-id=209-2461&viewport=4305%2C270%2C0.35&t=1qsDuzJ5xSM03ff1-1&scaling=scale-down&starting-point-node-id=209%3A2461&mode=design',
       },
     ],
-    finalImage: null,
     features: [
       {
         num: 'Key Feature 01',
         title: 'Inviting users to scroll and learn more.',
         body: "We designed the mobile website with visually appealing elements and interactive features that invited users to scroll and learn more about Starlight. By incorporating captivating imagery, compelling storytelling, and clear calls-to-action, we created a seamless narrative that guided users through Starlight's mission and impact.",
         image: '/images/starlight/final-deck-3.png',
-        imageAlt: 'Starlight final design — full presentation overview',
-        link: 'https://www.figma.com/proto/lEtsIdnSO4sZcHOynEYsGA/Starlight-Project-File?page-id=209%3A2386&type=design&node-id=209-2461&viewport=4305%2C270%2C0.35&t=1qsDuzJ5xSM03ff1-1&scaling=scale-down&starting-point-node-id=209%3A2461&mode=design',
-        linkLabel: 'View Prototype',
+        imageAlt: 'Starlight final design overview',
       },
       {
         num: 'Key Feature 02',
         title: 'A more user friendly donation experience.',
-        body: 'We streamlined the donation experience by minimising the number of steps required, providing clear instructions, and offering multiple payment options. By implementing intuitive form designs and ensuring that each element was easy to navigate, we reduced friction points that typically deter users from completing their donations. Progress indicators and confirmation messages kept users informed throughout the process.',
+        body: 'We streamlined the donation experience by minimising the number of steps required, providing clear instructions, and offering multiple payment options. By implementing intuitive form designs and ensuring that each element was easy to navigate, we reduced friction points that typically deter users from completing their donations.',
         image: '/images/starlight/final-2.png',
         imageAlt: 'Starlight donation flow redesign',
       },
       {
         num: 'Key Feature 03',
         title: 'Playful and engaging design.',
-        body: "We focused on creating a playful design system that maintained the Starlight aesthetic while clearly communicating system status through interactions. By integrating dynamic and engaging visual elements, we ensured that the design was both fun and functional. Interactive feedback such as animations and visual cues provided users with real-time responses to their actions.",
+        body: "We focused on creating a playful design system that maintained the Starlight aesthetic while clearly communicating system status through interactions. By integrating dynamic and engaging visual elements, we ensured that the design was both fun and functional.",
         image: '/images/starlight/prototype-animation.gif',
-        imageAlt: 'Starlight animated interactions and design system',
+        imageAlt: 'Starlight animated interactions',
       },
     ],
     designSystem: {
@@ -224,19 +219,24 @@ export const caseStudies = {
       subtext: 'Every component was designed to align with the Starlight brand while maintaining accessibility standards and mobile-first usability.',
       items: [
         {
-          image: '/images/starlight/ds-textfields.png',
-          title: 'Form Components',
-          body: 'Accessible input fields and form elements designed for ease of use across all device sizes.',
+          image: '/images/starlight/ds-colors.svg',
+          title: 'Colours',
+          body: 'A warm, accessible palette rooted in the Starlight brand — designed to feel joyful without sacrificing contrast.',
         },
         {
-          image: '/images/starlight/ds-frame-1.jpg',
-          title: 'Visual Language',
-          body: 'Typography, colour, and spacing decisions grounded in the Starlight brand palette and accessibility guidelines.',
+          image: '/images/starlight/ds-typography.svg',
+          title: 'Typography',
+          body: 'Type scale built for mobile readability, with clear hierarchy between headings, body, and UI labels.',
         },
         {
-          image: '/images/starlight/ds-frame-2.jpg',
-          title: 'UI Patterns',
-          body: 'Reusable UI patterns and interaction states that maintain consistency across the entire donation flow.',
+          image: '/images/starlight/ds-components.svg',
+          title: 'Iconography & Components',
+          body: 'Custom icons, input selectors, and text fields that feel at home within the Starlight visual language.',
+        },
+        {
+          image: '/images/starlight/ds-buttons-cards.svg',
+          title: 'Buttons & Cards',
+          body: 'Reusable button states and card components that carry the right visual weight for donation CTAs.',
         },
       ],
     },
@@ -244,7 +244,7 @@ export const caseStudies = {
       {
         quote: "I really liked your donation process and how streamlined it was. I also appreciated your language, especially the 'I want to give' statement. I thought it was a powerful yet simple statement to have on a donation form.",
         author: 'Vanessa Rodrigues',
-        role: 'Digital Marketing Lead, Starlight Children\'s Foundation',
+        role: "Digital Marketing Lead, Starlight Children's Foundation",
       },
       {
         quote: "I loved the rocket ship on the thank you page — it's something that has actually been floated a couple of times. I was very impressed to see it. It's very Starlighty and it really makes an impact on the thank you page.",
@@ -269,10 +269,6 @@ export const caseStudies = {
         icon: 'doc',
       },
     ],
-    outcome: {
-      title: 'Outcome',
-      body: "The redesigned mobile experience was presented to Starlight stakeholders at the end of the engagement. Usability testing with 7 participants showed a significant reduction in task completion time for key donation workflows. The impact dashboard resonated strongly: multiple participants said seeing their donation translated into 'wishes granted' made them feel more connected to the organisation's mission. Stakeholder feedback validated the streamlined donation process and the use of emotionally resonant language throughout.",
-    },
     reflection: "This project taught me that the emotional context of a product matters as much as its functional requirements. We weren't just designing a donation form. We were designing a moment of connection between a donor and a child in hospital. Getting that emotional register right required listening more carefully than I had in any previous project. I also learned how much business goals and user goals overlap when the design is right: a better donor experience directly translates to more completed donations.",
     next: { id: 'big-issue', title: 'The Big Issue' },
   },
@@ -289,55 +285,72 @@ export const caseStudies = {
     timeline: '12 weeks',
     tools: 'Figma, Miro, FigJam',
     type: 'Bootcamp Project',
+    hmwStatement: {
+      label: 'How might we...',
+      heading: 'Create a teacher portal that makes it easy for teachers to organize and manage excursions?',
+      body: "Whilst also providing clear and accessible information for teachers, and giving staff the tools to assist and streamline customer requests? These questions guided my design process as I sought to address the needs of both teachers and the brief set to us by The Big Issue.",
+      image: '/images/big-issue/hmw-photo.jpg',
+    },
     problem: {
       title: 'The Problem',
       body: [
         "Teachers organising The Big Issue Classroom excursions have limited time to manage the process. From prior research by Harness student Debbie Yee, we learned that 'teachers are chronically time-poor due to the multifaceted challenges and pain points of their profession.' Without a centralised platform, coordinators managed vendor schedules and teacher-student placements through spreadsheets and phone calls.",
-        "The challenge was to design a system that worked equally well for two very different user groups: admin coordinators managing logistics, and teachers tracking student progress and resources. The portal needed to accommodate all types of teachers regardless of technological literacy.",
+        "The challenge was to design a system that worked equally well for two very different user groups: admin coordinators managing logistics, and teachers tracking student progress and resources.",
       ],
       insight: "Two user groups with different mental models, different levels of digital literacy, and very different stakes. One wrong booking affects someone's income and a teacher's entire excursion.",
     },
+    stakeholderFindings: {
+      label: 'Our stakeholders told us that...',
+      heading: 'They wanted an easy to use, user friendly online portal for teachers to manage TBI Classroom.',
+      body: "The portal needed to meet several key requirements: a centralised hub for resources, user-friendly navigation, clear and accessible information, streamlined communication tools, and features that encourage rebookings. Three main insights emerged from our stakeholder interview with The Big Issue's Manager of Education Enterprises, Danya Sterling, and Program Coordinator Netta Shmerling.",
+      items: [
+        {
+          title: 'The primary business goals are customer retention and time savings for both the company and teachers.',
+          body: 'The portal needs to streamline processes and reduce administrative burdens to save time for all users involved.',
+        },
+        {
+          title: 'The portal must accommodate all types of teachers, regardless of their technological literacy.',
+          body: 'It should be easy to use, accessible, and user-friendly to ensure that all teachers can efficiently navigate and utilize the platform.',
+        },
+        {
+          title: 'To create a positive experience that encourages repeated use and long-term adoption of the program.',
+          body: 'The portal needs to be effective and engaging so that teachers will want to rebook and integrate it into their student curriculum.',
+        },
+      ],
+    },
     process: [
       {
-        num: '01',
-        title: 'Research and Stakeholder Interviews',
-        description: 'Interviewed The Big Issue Manager of Education Enterprises and Program Coordinator. Three key insights emerged: the primary goals are customer retention and time savings; the portal must accommodate all levels of technological literacy; and the experience must be engaging enough to encourage rebooking.',
-        image: '/images/big-issue/sketches.png',
-      },
-      {
-        num: '02',
         title: 'User Flows',
         description: "Mapped separate task flows for admin and teacher user types. Identified divergence points where the same data needed to look and behave differently for each audience. Identifying 'jobs to be done' helped prioritise features that would provide the most value.",
         image: '/images/big-issue/flow-admin.png',
       },
       {
-        num: '03',
         title: 'Wireframes',
         description: 'Focused on a clean, intuitive interface that would be easy for teachers to navigate. Key elements included: Dashboard Overview, Booking Calendar, Resource Library, Communication Tools, and a FAQ page. Validated with stakeholders before moving to high fidelity.',
         image: '/images/big-issue/wireframes.png',
       },
       {
-        num: '04',
-        title: 'User Testing',
-        description: '5 user tests conducted across varying levels of technological literacy. Positive: easy navigation, clean aesthetic, clear resource organisation. Improvements made: added an onboarding tour for new users and a colour-coded booking status system based on feedback.',
-        image: '/images/big-issue/dashboard.png',
+        title: 'Sketches',
+        description: 'Early ideation sketches exploring the portal structure, navigation hierarchy, and key page layouts. These rough explorations helped clarify the mental model before committing to wireframes.',
+        image: '/images/big-issue/sketches.png',
       },
     ],
     processNote: 'The dual-interface challenge required constantly asking: is this the same problem, or two different problems that share data? Getting that distinction right shaped every design decision.',
     designImages: [
       { src: '/images/big-issue/flow-teacher.png', caption: 'Teacher user flow: from login through to excursion management' },
+    ],
+    prototypes: [
       {
         src: '/images/big-issue/prototype-teacher.png',
-        caption: 'Hi-fi prototype: teacher dashboard and booking view',
         link: 'https://www.figma.com/proto/yNVHfgwhz7mSOy9I4ynAH4/The-Big-Issue-Project-File?node-id=334-29284&viewport=1168%2C511%2C0.06&t=mboqaqkaI9VGR6o2-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=334%3A29284&show-proto-sidebar=1',
+        label: 'Teacher Prototype',
       },
       {
         src: '/images/big-issue/prototype-admin.png',
-        caption: 'Hi-fi prototype: admin coordinator interface',
         link: 'https://www.figma.com/proto/yNVHfgwhz7mSOy9I4ynAH4/The-Big-Issue-Project-File?node-id=473-31255&viewport=1168%2C511%2C0.06&t=mboqaqkaI9VGR6o2-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=473%3A31255&show-proto-sidebar=1',
+        label: 'Admin Prototype',
       },
     ],
-    finalImage: null,
     userTesting: {
       heading: 'We asked users to find out more information about a booking and to locate a document.',
       body: 'I conducted 5 different user tests to get feedback on the portal design. Although our participants were not teachers, they provided us with a range of different levels of technological literacy that applies to our range of target users.',
@@ -358,11 +371,11 @@ export const caseStudies = {
       improvements: [
         {
           title: 'Initial Overwhelm',
-          body: 'Some participants felt a bit overwhelmed when first using the portal. To address this, we added an onboarding process to guide new users through the main features and functionalities, helping them get started more comfortably.',
+          body: 'Some participants felt a bit overwhelmed when first using the portal. To address this, we added an onboarding process to guide new users through the main features, helping them get started more comfortably.',
         },
         {
           title: 'Colour Coding',
-          body: 'Feedback indicated that adding colour coding could help users quickly identify different bookings and statuses at a glance. We incorporated a colour-coded system to enhance visual clarity and improve the overall user experience.',
+          body: 'Feedback indicated that adding colour coding could help users quickly identify different bookings and statuses at a glance. We incorporated a colour-coded system to enhance visual clarity.',
         },
       ],
     },
@@ -397,17 +410,17 @@ export const caseStudies = {
         {
           image: '/images/big-issue/ease-of-use.png',
           title: 'Ease of Use',
-          body: 'The interface is intuitive and user-friendly, allowing teachers to navigate effortlessly through planning, booking, and managing excursions without unnecessary complexity.',
+          body: 'The interface is intuitive and user-friendly, allowing teachers to navigate effortlessly through planning, booking, and managing excursions.',
         },
         {
           image: '/images/big-issue/clarity.png',
           title: 'Clarity',
-          body: 'Clear and concise information presentation helps teachers quickly find and understand the resources and tools they need, minimising confusion and enhancing usability.',
+          body: 'Clear and concise information presentation helps teachers quickly find and understand the resources and tools they need.',
         },
         {
           image: '/images/big-issue/efficiency.png',
           title: 'Efficiency',
-          body: 'The portal streamlines administrative tasks, providing quick access to essential tools and resources, saving teachers valuable time and reducing effort.',
+          body: 'The portal streamlines administrative tasks, providing quick access to essential tools and resources, saving teachers valuable time.',
         },
       ],
     },
@@ -426,9 +439,10 @@ export const caseStudies = {
     },
     devHandoff: {
       label: 'Developer Handoff',
-      heading: 'Annotated specs for both interfaces.',
+      heading: 'Annotated specs for seamless implementation.',
       body: 'Each prototype screen was annotated with spacing, typography, component states, and interaction notes to ensure accurate implementation without ambiguity.',
       images: [
+        { src: '/images/big-issue/design-system/dashboard.png', caption: 'Dashboard overview — layout and component specifications' },
         { src: '/images/big-issue/dev-handoff-teacher.png', caption: 'Teacher interface — annotated prototype specs' },
         { src: '/images/big-issue/dev-handoff-admin.png', caption: 'Admin interface — annotated prototype specs' },
       ],
@@ -462,11 +476,25 @@ export const caseStudies = {
         icon: 'doc',
       },
     ],
-    outcome: {
-      title: 'Outcome',
-      body: "Delivered complete hi-fi prototypes for both the admin and teacher interfaces, validated through usability testing. Coordinators felt the booking conflict detection and colour-coded status system would save them significant time each week. Teachers appreciated having student progress and resources in a single view. Stakeholder feedback highlighted the booking management system and file organisation as standout features.",
+    reflection: {
+      label: 'Project Reflections',
+      heading: 'Here are some things I took away from this project...',
+      intro: "While I was excited to focus on prototyping and showcase my new skills in Figma, I realized that what intrigued me the most was the entire process of designing a product. From comprehensive planning and attention to detail to creating a flexible design system, each aspect of the design journey proved to be invaluable and deeply engaging.",
+      items: [
+        {
+          title: 'The details matter.',
+          body: "Throughout the design process, I learned that paying attention to the smallest details can significantly impact the user experience. From ensuring colour contrast met accessibility standards to fine-tuning the spacing between elements for optimal readability, every detail contributed to a more polished and user-friendly interface — and ensured the portal was accessible to all users, including those with varying levels of technological literacy.",
+        },
+        {
+          title: 'Comprehensive planning saves time.',
+          body: "Initially, I overlooked some key insights from previous research, which resulted in a design that did not fully address user needs. I had to go back, review the research, and revise my sketches. This experience underscored the value of comprehensive planning — investing time upfront to conduct thorough research and iterative wireframing would have led to a stronger design from the start.",
+        },
+        {
+          title: 'A flexible but consistent design system is best.',
+          body: "Creating a flexible yet consistent design system proved crucial in developing the teacher portal. The system provided a cohesive visual language ensuring a unified experience across both interfaces, while its flexibility allowed me to adapt and create new components that responded to user needs without sacrificing consistency.",
+        },
+      ],
     },
-    reflection: "Designing for two distinct user types forced me to be more rigorous about separating user needs from business needs. The shared data model meant technical constraints shaped the design. Learning to work within those constraints rather than around them was one of the most valuable skills I developed on this project. I also learned that paying attention to the smallest details, from colour contrast to spacing between elements, directly affects whether a product feels credible and trustworthy.",
     next: { id: 'peoples-first', title: 'People First Bank' },
   },
 
@@ -477,7 +505,7 @@ export const caseStudies = {
     tags: ['Data Analysis', 'UX Research'],
     heroImage: 'https://cdn.prod.website-files.com/65e6a01f2073c7705362cda6/664c1e8352be1664d3337432_Frame%2024.png',
     overview:
-      "Approached by Heritage Bank and People's Choice, alongside a talented team from Harness Projects, to conduct user research and analysis for People First Bank. Our goal was to determine how the newly merged bank could effectively convey an engaging message to its younger target audience and identify which products or features were most important to them. People First Bank is Australia's new leading member-owned bank, serving over 700,000 members as a robust national mutual alternative to the big banks.",
+      "Approached by Heritage Bank and People's Choice, alongside a talented team from Harness Projects, to conduct user research and analysis for People First Bank — Australia's new leading member-owned bank, serving over 700,000 members as a national mutual alternative to the big banks. Our goal was to determine how the newly merged bank could effectively convey an engaging message to its younger target audience and identify which products or features were most important to them.",
     role: 'UX Researcher',
     timeline: '7 weeks',
     tools: 'Miro, Dovetail, Figma',
@@ -486,39 +514,34 @@ export const caseStudies = {
       title: 'The Challenge',
       body: [
         "The merger of Heritage Bank and People's Choice created a new challenge: two customer bases with different mental models, different digital banking habits, and different expectations, now expected to converge on a single platform. The bank traditionally served older generations but now needed to attract and retain Gen Z and Millennials.",
-        "Midway through the project, the brief shifted. The client was no longer interested in researching potential design options for the new homepage. Instead, People First Bank wanted insights and actionable recommendations for engaging and attracting their younger target audience, specifically around which products and features mattered most to them.",
+        "Midway through the project, the brief shifted. People First Bank wanted insights and actionable recommendations for engaging and attracting their younger target audience — specifically around which products and features mattered most to them.",
       ],
       insight: "Customers valued the community feel of a credit union but measured trust by digital capability. The merger risked losing both if the transition was handled without understanding what the younger demographic actually wanted.",
     },
     process: [
       {
-        num: '01',
         title: 'Stakeholder Interviews',
-        description: "Conducted in-depth interviews with Heritage Bank and People's Choice stakeholders to uncover five key business areas: target demographic priorities, technological capabilities, merger goals, ESG values, and product offerings. The bank was looking to streamline 200+ products and needed insight into which mattered most to younger users.",
+        description: "Conducted in-depth interviews with Heritage Bank and People's Choice stakeholders to uncover five key business areas: target demographic priorities, technological capabilities, merger goals, ESG values, and product offerings.",
         image: null,
       },
       {
-        num: '02',
         title: 'Competitive Platform Review',
-        description: "Reviewed both legacy digital banking platforms side by side, benchmarking against industry standards and cataloguing UX patterns, information architecture, and feature parity. This formed the baseline for understanding the gap between current state and target state.",
-        image: '/images/peoples-first/existing.png',
+        description: "Reviewed both legacy digital banking platforms side by side, benchmarking against industry standards and cataloguing UX patterns, information architecture, and feature parity.",
+        image: '/images/peoples-first/existing-homepages.png',
       },
       {
-        num: '03',
         title: 'User Interviews and Surveys',
         description: 'Recruited Millennial and Gen Z participants for 1-on-1 long-form interviews and surveys. Research objectives covered understanding of mutual banks, key products and offerings, and the role of ESG values and reputation in financial decision-making.',
-        image: '/images/peoples-first/research.jpg',
+        image: '/images/peoples-first/research-session.jpg',
       },
       {
-        num: '04',
         title: 'Synthesis and Proto-Persona',
         description: 'Synthesised interview and survey data into a proto-persona illustrating the target demographic goals, needs, pain points, and motivations. This grounded our five key insights and three recommendations in real user data rather than assumptions.',
         image: '/images/peoples-first/peoples.png',
       },
     ],
-    processNote: 'This was a research-heavy engagement with no hi-fi design output. The deliverable was evidence and insight that the product team could act on. That required a different kind of rigour: communicating findings clearly is itself a design problem.',
+    processNote: 'This was a research-heavy engagement with no hi-fi design output. The deliverable was evidence and insight that the product team could act on. Communicating findings clearly is itself a design problem.',
     designImages: [],
-    finalImage: null,
     insights: [
       {
         num: '01',
@@ -550,17 +573,17 @@ export const caseStudies = {
       {
         num: '01',
         title: 'Social media education campaign',
-        body: "Educate younger audiences on the benefits of mutual banking via Instagram and TikTok with videos and testimonials showcasing community focus and environmental responsibility. Leverage People First Bank's community story as a differentiator once competitive products are in place.",
+        body: "Educate younger audiences on the benefits of mutual banking via Instagram and TikTok with videos and testimonials showcasing community focus and environmental responsibility.",
       },
       {
         num: '02',
         title: 'Invest in competitive products',
-        body: 'Investigate and develop best-in-market products with minimal fees. Conduct a market analysis for product enhancement and consolidation of the existing 200+ product catalogue. Younger customers will not consider a bank that cannot compete on core financial products.',
+        body: 'Investigate and develop best-in-market products with minimal fees. Conduct a market analysis for product enhancement and consolidation of the existing 200+ product catalogue.',
       },
       {
         num: '03',
         title: 'Holistic digital experience uplift',
-        body: 'Assess and improve the comprehensive digital experience through streamlined platforms, chatbot support, optimised navigation, and enhanced mobile app functionality. The digital experience must match the quality of the products to retain younger customers.',
+        body: 'Assess and improve the comprehensive digital experience through streamlined platforms, chatbot support, optimised navigation, and enhanced mobile app functionality.',
       },
     ],
     projectLinks: [
@@ -575,15 +598,11 @@ export const caseStudies = {
         icon: 'doc',
       },
     ],
-    outcome: {
-      title: 'Outcome',
-      body: "Delivered a synthesis report and presentation identifying the top UX and product priorities for the People First Bank digital platform. Five key insights gave the product team a clear picture of what Millennials actually value, cutting through assumptions about ESG and brand loyalty. Three actionable recommendations provided a sequenced roadmap: educate on mutual banking, build competitive products, then invest in digital experience uplift.",
-    },
     reflection: "Research projects without a design output taught me that communicating findings clearly is a design problem in itself. The way you frame a recommendation determines whether it gets acted on. I came out of this project a stronger communicator and a more structured thinker. I also learned to be adaptable: when the brief changed midway through, we had to quickly reframe our research objectives without losing the work already done.",
     next: { id: 'starlight', title: "Starlight Children's Foundation" },
   },
 
-  // ── Architecture case studies ──────────────────────────────
+  // ── Architecture Case Studies ────────────────────────────────
 
   'pca-refurb': {
     title: 'Porsche Australia Office Refurbishment',
@@ -591,20 +610,12 @@ export const caseStudies = {
     date: 'Completed 2023',
     tags: ['Concept Design', 'Construction Documentation'],
     heroImage: '/images/architecture/pca-refurb/img-01.jpg',
-    overview:
-      "Interior refurbishment of the Porsche Cars Australia national headquarters in Melbourne. The project involved redesigning the open-plan workspace, executive meeting suites, and staff amenities to align with Porsche's updated global design language.",
+    overview: "Interior refurbishment of the Porsche Cars Australia national headquarters in Melbourne. The project redesigned the open-plan workspace, executive meeting suites, and staff amenities to align with Porsche's updated global design language — balancing strict brand standards with practical workplace functionality and the constraints of an existing building.",
     role: 'Architectural Designer',
     timeline: '8 months',
     tools: 'Revit, AutoCAD, SketchUp',
     type: 'Commercial Architecture',
-    problem: {
-      title: 'The Brief',
-      body: [
-        "Porsche Cars Australia required a refurbishment of their national HQ that reflected the brand's premium positioning while improving day-to-day working conditions for staff. The existing office felt dated and disconnected from the quality of the product the business sold.",
-      ],
-    },
     galleryImages: [
-      '/images/architecture/pca-refurb/img-01.jpg',
       '/images/architecture/pca-refurb/img-02.jpg',
       '/images/architecture/pca-refurb/img-03.jpg',
       '/images/architecture/pca-refurb/img-04.jpg',
@@ -613,10 +624,6 @@ export const caseStudies = {
       '/images/architecture/pca-refurb/img-07.jpg',
       '/images/architecture/pca-refurb/img-08.jpg',
     ],
-    outcome: {
-      title: 'Outcome',
-      body: "The refurbishment was completed on schedule and received positive feedback from Porsche AG during a regional review. The project demonstrated my ability to work within strict brand frameworks while delivering a space that functioned well for its occupants.",
-    },
     next: { id: 'pca-adelaide', title: 'Porsche Center Adelaide and BMW Medindie' },
   },
 
@@ -625,34 +632,22 @@ export const caseStudies = {
     category: 'Architecture',
     date: 'Completed 2024',
     tags: ['Concept Design', 'Construction Documentation'],
-    heroImage: '/images/architecture/pca-adelaide/img-01.jpg',
-    overview:
-      "Concept design and documentation for two concurrent premium automotive dealership projects in Adelaide: a Porsche Center and BMW dealership, both requiring compliance with their respective manufacturer design standards.",
+    heroImage: '/images/architecture/pca-adelaide/img-04.jpg',
+    overview: "Concept design and documentation for two concurrent premium automotive dealership projects in Adelaide — a Porsche Center and BMW dealership, both requiring compliance with their respective manufacturer design standards, local planning requirements, and client budget. Close collaboration with manufacturer CI teams in Germany and the UK required clear communication and careful documentation management.",
     role: 'Architectural Designer',
     timeline: '12 months',
     tools: 'Revit, AutoCAD, Lumion',
     type: 'Commercial Architecture',
-    problem: {
-      title: 'The Brief',
-      body: [
-        "Automotive dealerships are among the most brand-controlled built environments. The challenge was to meet those standards across two different brands simultaneously, within the constraints of local planning requirements and client budget.",
-      ],
-    },
     galleryImages: [
       '/images/architecture/pca-adelaide/img-01.jpg',
       '/images/architecture/pca-adelaide/img-02.jpg',
       '/images/architecture/pca-adelaide/img-03.jpg',
-      '/images/architecture/pca-adelaide/img-04.jpg',
       '/images/architecture/pca-adelaide/img-05.jpg',
       '/images/architecture/pca-adelaide/img-06.jpg',
       '/images/architecture/pca-adelaide/img-07.jpg',
       '/images/architecture/pca-adelaide/img-08.jpg',
       '/images/architecture/pca-adelaide/img-09.jpg',
     ],
-    outcome: {
-      title: 'Outcome',
-      body: "Both projects received manufacturer CI approval and building permits. The Porsche Center Adelaide was completed in early 2024. The BMW Medindie project progressed to construction during the same period.",
-    },
     next: { id: 'pc-melbourne', title: 'Porsche Center Melbourne' },
   },
 
@@ -662,30 +657,18 @@ export const caseStudies = {
     date: 'Under construction',
     tags: ['Concept Design'],
     heroImage: '/images/architecture/pc-melbourne/img-01.jpg',
-    overview:
-      "Concept design for a new flagship Porsche Center in Melbourne, one of the brand's most visible Australian locations and a key project in their national network expansion.",
+    overview: "Concept design for a new flagship Porsche Center in Melbourne — one of the brand's most visible Australian locations. The brief called for a design that went beyond CI compliance to create a genuinely differentiated customer experience, using the facade as a display surface and sequencing the interior journey from arrival through showroom to customer lounge.",
     role: 'Architectural Designer',
     timeline: 'Ongoing',
     tools: 'Revit, SketchUp, Lumion',
     type: 'Commercial Architecture',
-    problem: {
-      title: 'The Brief',
-      body: [
-        "Porsche's Melbourne flagship required a design that could serve as a landmark for the brand — a showroom experience that matched the emotional quality of the cars themselves. The brief called for a design that went beyond CI compliance to create a genuinely differentiated customer experience.",
-      ],
-    },
     galleryImages: [
-      '/images/architecture/pc-melbourne/img-01.jpg',
       '/images/architecture/pc-melbourne/img-02.jpg',
       '/images/architecture/pc-melbourne/img-03.jpg',
       '/images/architecture/pc-melbourne/img-04.jpg',
       '/images/architecture/pc-melbourne/img-05.jpg',
       '/images/architecture/pc-melbourne/img-06.jpg',
     ],
-    outcome: {
-      title: 'Outcome',
-      body: "The concept design received approval from Porsche AG and the project has progressed to construction documentation. The facade design was cited by the client as the strongest aspect of the scheme.",
-    },
     next: { id: 'kia', title: 'Adrian Brian Kia Medindie' },
   },
 
@@ -695,29 +678,17 @@ export const caseStudies = {
     date: 'Completed 2023',
     tags: ['Concept Design', 'Construction Documentation'],
     heroImage: '/images/architecture/kia/exterior.jpg',
-    overview:
-      "Design and documentation for a premium Kia dealership in Medindie, South Australia. The project delivered a multi-brand automotive facility accommodating showroom, service, and retail functions across a constrained urban site.",
+    overview: "Design and documentation for a premium Kia dealership in Medindie, South Australia. The project delivered a multi-brand automotive facility accommodating showroom, service, and retail functions — balancing the Kia brand identity with a multi-brand service offering, all within a tight urban site footprint.",
     role: 'Architectural Designer',
     timeline: '10 months',
     tools: 'Revit, AutoCAD, Lumion',
     type: 'Commercial Architecture',
-    problem: {
-      title: 'The Brief',
-      body: [
-        "The client required a facility that balanced the Kia brand identity with a multi-brand service offering, all within a tight urban site footprint. The design had to create a premium customer experience from the street while maintaining operational efficiency for the service team.",
-      ],
-    },
     galleryImages: [
-      '/images/architecture/kia/exterior.jpg',
       '/images/architecture/kia/showroom.jpg',
       '/images/architecture/kia/car-display.jpg',
       '/images/architecture/kia/bar.jpg',
       '/images/architecture/kia/multi-brand.jpg',
     ],
-    outcome: {
-      title: 'Outcome',
-      body: "The completed dealership met all Kia CI requirements and opened to positive reception. The multi-brand service workshop layout was identified by the client as a key operational improvement over their previous facility.",
-    },
     next: { id: 'williams', title: 'Williams Residence' },
   },
 
@@ -727,26 +698,14 @@ export const caseStudies = {
     date: 'Completed 2022',
     tags: ['Concept Design', 'Construction Documentation'],
     heroImage: '/images/architecture/williams/exterior.jpg',
-    overview:
-      "Residential design for a private dwelling in South Australia, delivering a considered response to the site's landscape and orientation. The project involved full concept design and construction documentation.",
+    overview: "Residential design for a private dwelling in South Australia, delivering a considered response to the site's landscape and orientation. The clients sought a home with generous natural light and a clear relationship between indoor and outdoor living — responding to the site's topography while meeting the practical needs of a family home.",
     role: 'Architectural Designer',
     timeline: '12 months',
     tools: 'Revit, AutoCAD, SketchUp',
     type: 'Residential Architecture',
-    problem: {
-      title: 'The Brief',
-      body: [
-        "The clients sought a home that felt connected to its landscape, with generous natural light and a clear relationship between indoor and outdoor living. The design needed to respond to the site's topography and orientation while meeting the practical needs of a family home.",
-      ],
-    },
     galleryImages: [
-      '/images/architecture/williams/exterior.jpg',
       '/images/architecture/williams/interior.jpg',
     ],
-    outcome: {
-      title: 'Outcome',
-      body: "The completed residence was well-received by the clients. The orientation strategy maximised natural light year-round, and the indoor-outdoor connection was cited as the standout feature of the design.",
-    },
     next: { id: 'truck-storage', title: 'Truck and Storage Complex' },
   },
 
@@ -756,23 +715,12 @@ export const caseStudies = {
     date: 'Under construction',
     tags: ['Concept Design', 'Construction Documentation'],
     heroImage: 'https://cdn.prod.website-files.com/65e6a01f2073c7705362cda6/664c30454d0e8083c081c6dd_Nuriootpa%20Traders%20Site%20Render.jpg',
-    overview:
-      "Industrial facility design for a logistics operator in regional South Australia, covering a large-scale truck servicing and storage complex designed for operational efficiency and future expansion.",
+    overview: "Industrial facility design for a logistics operator in regional South Australia — a large-scale truck servicing and storage complex designed for operational efficiency and future expansion. The challenge was designing for workflow: how trucks move through the site, how the servicing bay connects to storage, and how staff and vehicles are safely separated.",
     role: 'Architectural Designer',
     timeline: '10 months',
     tools: 'Revit, AutoCAD',
     type: 'Industrial Architecture',
-    problem: {
-      title: 'The Brief',
-      body: [
-        "The client required a purpose-built facility that could accommodate heavy vehicle servicing, long-term truck storage, and ancillary office functions on a constrained rural site. The primary challenge was designing for operational workflow: how trucks move through the site, how the servicing bay connects to storage, and how staff and vehicles are separated for safety.",
-      ],
-    },
     galleryImages: [],
-    outcome: {
-      title: 'Outcome',
-      body: "The project received development approval and commenced construction. The operational workflow design was validated by the client's operations manager as a significant improvement over their existing facility.",
-    },
     next: { id: 'starlight', title: "Starlight Children's Foundation" },
   },
 };
