@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -43,8 +43,16 @@ function LinkIcon({ icon, size = 'sm' }) {
 
 // ── Lightbox ─────────────────────────────────────────────────
 function Lightbox({ src, onClose }) {
+  const closeRef = useRef(null);
+
   useEffect(() => {
-    const onKey = (e) => { if (e.key === 'Escape') onClose(); };
+    // Move focus into dialog immediately
+    closeRef.current?.focus();
+    const onKey = (e) => {
+      if (e.key === 'Escape') { onClose(); return; }
+      // Keep Tab focus trapped on the close button (single focusable element)
+      if (e.key === 'Tab') { e.preventDefault(); closeRef.current?.focus(); }
+    };
     document.addEventListener('keydown', onKey);
     document.body.style.overflow = 'hidden';
     return () => {
@@ -55,7 +63,7 @@ function Lightbox({ src, onClose }) {
 
   return (
     <div className="lightbox" onClick={onClose} role="dialog" aria-modal="true" aria-label="Image viewer">
-      <button className="lightbox-close" onClick={onClose} aria-label="Close image viewer">
+      <button ref={closeRef} className="lightbox-close" onClick={onClose} aria-label="Close image viewer">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
           <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
         </svg>
@@ -122,7 +130,7 @@ export default function ProjectPage() {
           <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
             <line x1="19" y1="12" x2="5" y2="12" /><polyline points="12 5 5 12 12 19" />
           </svg>
-          {isUX ? 'UX Work' : 'Architecture'}
+          {isArch ? 'Architecture' : 'Work'}
         </Link>
 
         <div className="project-header fade-in">
@@ -136,7 +144,7 @@ export default function ProjectPage() {
         {project.heroImage && (
           <img
             src={project.heroImage}
-            alt={project.title}
+            alt={project.heroAlt || `${project.title} — design overview`}
             className="project-hero-image fade-in zoomable"
             onClick={() => openLightbox(project.heroImage)}
           />
@@ -162,7 +170,6 @@ export default function ProjectPage() {
               <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer" className="project-link-btn">
                 <LinkIcon icon={link.icon} size="sm" />
                 {link.label}
-                <span style={{ opacity: 0.5, marginLeft: 2 }}>↗</span>
               </a>
             ))}
           </div>
