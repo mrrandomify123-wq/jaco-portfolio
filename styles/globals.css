@@ -2,8 +2,8 @@
 
 :root {
   --bg: #0a0a0a;
-  --surface: #111111;
-  --surface-raised: #1a1a1a;
+  --surface: #141414;
+  --surface-raised: #1e1e1e;
   --text: #ebebeb;
   --text-muted: #b0b0b0;
   --text-subtle: #2a2a2a;
@@ -16,7 +16,8 @@
   --mono: 'Space Mono', monospace;
   --radius: 12px;
   --radius-sm: 6px;
-  --transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --transition: 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --transition-slow: 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 *, *::before, *::after {
@@ -36,7 +37,7 @@ body {
   background-size: 22px 22px;
   color: var(--text);
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 1.7;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
@@ -88,7 +89,7 @@ img {
 
 .sidebar-logo {
   display: block;
-  transition: opacity 0.2s;
+  transition: opacity var(--transition);
 }
 
 .sidebar-logo:hover {
@@ -114,13 +115,19 @@ img {
   justify-content: center;
   border-radius: 4px;
   margin-bottom: 14px;
-  transition: border-color 0.2s, background 0.2s;
+  transition: border-color var(--transition), background var(--transition);
   flex-shrink: 0;
 }
 
 .sidebar-logo:hover .sidebar-monogram {
   border-color: rgba(255, 255, 255, 0.35);
   background: rgba(255, 255, 255, 0.03);
+}
+
+.sidebar-identity {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
 }
 
 .sidebar-name {
@@ -202,7 +209,7 @@ img {
   font-weight: 400;
   color: var(--text-muted);
   padding: 6px 0;
-  transition: color 0.2s, transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: color var(--transition), transform var(--transition);
   position: relative;
   display: block;
   cursor: pointer;
@@ -239,7 +246,7 @@ img {
   font-size: 12px;
   color: var(--text-muted);
   padding: 5px 0;
-  transition: color 0.2s, transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: color var(--transition), transform var(--transition);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -253,7 +260,7 @@ img {
 
 .ext-arrow {
   opacity: 0;
-  transition: opacity 0.2s;
+  transition: opacity var(--transition);
   font-size: 11px;
   font-family: var(--sans);
 }
@@ -358,9 +365,9 @@ img {
 
 .hero-title em {
   font-style: italic;
-  font-family: var(--sans);
+  font-family: var(--serif);
   color: var(--text-muted);
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: -0.01em;
 }
 
@@ -409,7 +416,7 @@ img {
   padding: 13px 22px;
   border: 1px solid var(--border-hover);
   border-radius: var(--radius-sm);
-  transition: border-color 0.2s, background 0.2s;
+  transition: border-color var(--transition), background var(--transition);
   letter-spacing: 0.02em;
   font-family: var(--mono);
 }
@@ -420,7 +427,7 @@ img {
 }
 
 .hero-cta svg {
-  transition: transform 0.2s;
+  transition: transform var(--transition);
 }
 
 .hero-cta:hover svg {
@@ -430,7 +437,7 @@ img {
 .hero-cta-secondary {
   font-size: 13px;
   color: var(--text-muted);
-  transition: color 0.2s;
+  transition: color var(--transition);
   font-family: var(--mono);
 }
 
@@ -516,7 +523,7 @@ img {
   align-items: center;
   padding: 40px 0;
   border-bottom: 1px solid var(--border);
-  transition: all 0.25s;
+  transition: all var(--transition);
   cursor: pointer;
   position: relative;
 }
@@ -599,7 +606,7 @@ img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: transform var(--transition-slow);
 }
 
 /* ===== PROJECT CARDS — grid (work page) ===== */
@@ -617,7 +624,7 @@ img {
   overflow: hidden;
   background: var(--surface);
   cursor: pointer;
-  transition: border-color 0.25s, transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: border-color var(--transition), transform var(--transition);
 }
 
 .project-card-grid:hover {
@@ -658,7 +665,7 @@ img {
   overflow: hidden;
   cursor: pointer;
   text-decoration: none;
-  transition: border-color 0.25s, transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: border-color var(--transition), transform var(--transition);
   background: var(--surface);
 }
 
@@ -676,7 +683,7 @@ img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: transform var(--transition-slow);
 }
 
 .arch-card:hover .arch-card-image {
@@ -743,7 +750,7 @@ img {
   padding: 11px 22px;
   border: 1px solid var(--border-hover);
   border-radius: var(--radius-sm);
-  transition: border-color 0.2s, background 0.2s;
+  transition: border-color var(--transition), background var(--transition);
   margin-top: 8px;
   width: fit-content;
   font-family: var(--mono);
@@ -795,7 +802,7 @@ img {
   content: '';
   width: 3px;
   height: 3px;
-  background: var(--accent);
+  background: rgba(255, 255, 255, 0.25);
   border-radius: 50%;
   flex-shrink: 0;
 }
@@ -894,7 +901,7 @@ img {
   content: '';
   width: 3px;
   height: 3px;
-  background: var(--accent);
+  background: rgba(255, 255, 255, 0.25);
   border-radius: 50%;
   flex-shrink: 0;
 }
@@ -947,7 +954,7 @@ img {
   padding: 13px 22px;
   border: 1px solid var(--border-hover);
   border-radius: var(--radius-sm);
-  transition: border-color 0.2s, background 0.2s;
+  transition: border-color var(--transition), background var(--transition);
   font-family: var(--mono);
   letter-spacing: 0.04em;
 }
@@ -974,7 +981,7 @@ img {
 
 .footer-icon-btn {
   opacity: 0.35;
-  transition: opacity 0.2s;
+  transition: opacity var(--transition);
   display: flex;
   align-items: center;
 }
@@ -987,7 +994,7 @@ img {
 .fade-in {
   opacity: 0;
   transform: translateY(14px);
-  transition: opacity 0.65s ease, transform 0.65s ease;
+  transition: opacity var(--transition-slow), transform var(--transition-slow);
 }
 
 .fade-in.visible {
@@ -1095,9 +1102,9 @@ img {
 }
 
 .project-section {
-  margin-top: 64px;
+  margin-top: 48px;
   margin-bottom: 0;
-  padding-top: 56px;
+  padding-top: 48px;
   border-top: 1px solid var(--border);
 }
 
@@ -1155,7 +1162,7 @@ img {
   padding: 12px 18px;
   border: 1px solid var(--border-hover);
   border-radius: var(--radius-sm);
-  transition: border-color 0.2s, background 0.2s;
+  transition: border-color var(--transition), background var(--transition);
   text-decoration: none;
   text-transform: uppercase;
 }
@@ -1181,7 +1188,7 @@ img {
 .feature-item {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 72px;
+  gap: 52px;
   align-items: center;
   padding: 72px 0;
   border-top: 1px solid var(--border);
@@ -1245,7 +1252,7 @@ img {
   padding: 9px 16px;
   border: 1px solid var(--border-hover);
   border-radius: var(--radius-sm);
-  transition: border-color 0.2s, background 0.2s;
+  transition: border-color var(--transition), background var(--transition);
   text-decoration: none;
   width: fit-content;
 }
@@ -1294,7 +1301,7 @@ a.feature-image-wrap::after {
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0);
-  transition: background 0.2s;
+  transition: background var(--transition);
 }
 
 a.feature-image-wrap:hover::after {
@@ -1494,13 +1501,13 @@ a.feature-image-wrap:hover::after {
 
 .testimonial-quote::before {
   content: '\201C';
-  font-size: 48px;
+  font-size: 36px;
   line-height: 0.8;
-  color: var(--accent);
+  color: var(--text-muted);
   font-family: var(--serif);
   display: block;
   margin-bottom: 12px;
-  opacity: 0.7;
+  opacity: 0.3;
 }
 
 .testimonial-author {
@@ -1540,7 +1547,7 @@ a.feature-image-wrap:hover::after {
   border-radius: var(--radius);
   background: var(--surface);
   text-decoration: none;
-  transition: border-color 0.2s, background 0.2s, transform 0.2s;
+  transition: border-color var(--transition), background var(--transition), transform var(--transition);
 }
 
 .deliverable-card:hover {
@@ -1588,7 +1595,7 @@ a.feature-image-wrap:hover::after {
   font-size: 18px;
   color: var(--text-muted);
   flex-shrink: 0;
-  transition: transform 0.2s;
+  transition: transform var(--transition);
 }
 
 .deliverable-card:hover .deliverable-card-arrow {
@@ -1611,11 +1618,12 @@ a.feature-image-wrap:hover::after {
   flex-direction: column;
   gap: 14px;
   position: relative;
-  transition: border-color 0.2s;
+  transition: border-color var(--transition), transform var(--transition);
 }
 
 .app-card:hover {
   border-color: var(--border-hover);
+  transform: translateY(-2px);
 }
 
 .app-card-header {
@@ -1913,21 +1921,22 @@ a.project-design-image-link:hover::after {
   font-weight: 500;
   color: var(--text);
   letter-spacing: -0.01em;
-  transition: color 0.2s;
+  transition: color var(--transition);
 }
 
 .project-next-link:hover .project-next-title {
-  color: var(--text-muted);
+  color: var(--text);
 }
 
 .project-next-arrow {
   font-size: 24px;
   color: var(--text-muted);
-  transition: transform 0.2s;
+  transition: transform var(--transition), color var(--transition);
 }
 
 .project-next-link:hover .project-next-arrow {
-  transform: translateX(4px);
+  transform: translateX(6px);
+  color: var(--accent);
 }
 
 /* Key features wrapper — sits outside project-detail for full content width */
@@ -2194,7 +2203,7 @@ a.project-design-image-link:hover::after {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background var(--transition);
   line-height: 1;
 }
 
@@ -2346,7 +2355,7 @@ a.project-design-image-link:hover::after {
   bottom: 32px;
   border-radius: var(--radius);
   background: rgba(0, 0, 0, 0);
-  transition: background 0.2s;
+  transition: background var(--transition);
   pointer-events: none;
 }
 
@@ -2410,7 +2419,7 @@ a.project-design-image-link:hover::after {
   display: block;
   border-radius: var(--radius);
   background: var(--surface);
-  transition: opacity 0.2s;
+  transition: opacity var(--transition);
 }
 
 .design-system-carousel-item:hover img {
@@ -2452,7 +2461,7 @@ a.project-design-image-link:hover::after {
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.4s ease;
+  transition: transform var(--transition-slow);
 }
 
 .arch-bento-item:hover img {
@@ -2619,9 +2628,7 @@ button:focus-visible {
   .design-system-carousel-item {
     flex: 0 0 260px;
   }
-}
 
-@media (max-width: 900px) {
   .project-bento-inner {
     padding: 0 32px;
   }

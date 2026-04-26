@@ -46,7 +46,7 @@ export default function Home() {
 
       {/* HERO */}
       <section id="home" className="hero">
-        <p className="hero-label">Portfolio / 2026</p>
+        <p className="hero-label">{siteConfig.tagline}</p>
         <h1 className="hero-title">
           Hi, I&apos;m Jaco,<br />
           a designer bridging<br />
